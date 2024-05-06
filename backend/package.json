@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for hidden-biometrics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafael-Euzebio/hidden-biometrics.git"
+  },
+  "author": "Rafael Euzebio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rafael-Euzebio/hidden-biometrics/issues"
+  },
+  "homepage": "https://github.com/Rafael-Euzebio/hidden-biometrics#readme"
+}
