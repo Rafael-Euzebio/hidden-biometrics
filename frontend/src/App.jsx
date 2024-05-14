@@ -4,7 +4,6 @@ import userConfig from './utils/userConfig'
 
 function App () {
   const { fingerprint, userInfo } = userConfig
-  console.log(userInfo)
   return (
     <>
       <h1>Browser Fingerprinting</h1>
