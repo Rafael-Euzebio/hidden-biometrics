@@ -14,15 +14,13 @@
 Hidden Biometrics is a personal project. A website with the purpose to demonstrate how [Browser Fingerprinting](https://en.wikipedia.org/wiki/Device_fingerprint#Browser_fingerprint) works, and what are the uses of this technique.  
 The goal is to demonstrate how this technique is used to identify users, even under the use of Incognito mode or VPNs.
 
-As a personal project it also serves the purpose to apply knowledge about web development, see [Tech Stack](#tech-tack).
+As a personal project it also serves the purpose to apply my knowledge about web development, see [Tech Stack](#tech-tack).
 
 ### Roadmap English
-- [ ] Generate Browser Fingerprint.
+- [ ] Browser Fingerprint and user information.
+    - [x] Display it to the user.
     - [ ] Store it in a Mongo Database.
-    - [ ] Display it to the user.
-- [ ] Display information about the user.
-    - [ ] Store it in a Mongo Database.
-        - [ ] Allow deletion of user information.
+    - [ ] Allow deletion
 - [ ] Add sections explaining the uses for Browser Fingerprint.
 - [ ] Display statistics.
 
@@ -36,12 +34,10 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
 
 
 ### Roadmap Português
-- [ ] Gerar Impressão Digital de Browser.
+- [ ] Impressão Digital de Browser e informações sobre o usuário.
+    - [x] Exibir para o usuário.
     - [ ] Armazená-la em um banco de dados MongoDB.
-    - [ ] Exibir para o usuário.
-- [ ] Exibir informações sobre o usuário.
-    - [ ] Armazená-la em um banco de dados MongoDB.
-    - [ ] Permitir deleção das mesmas.
+    - [ ] Permitir deleção.
 - [ ] Adicionar sessões sobre os diferentes usos de Impressão Digital de Browser.
 - [ ] Exibir estatísticas.
 
