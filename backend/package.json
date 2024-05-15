@@ -4,7 +4,8 @@
   "description": "backend for hidden-biometrics.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/Rafael-Euzebio/hidden-biometrics/issues"
   },
-  "homepage": "https://github.com/Rafael-Euzebio/hidden-biometrics#readme"
+  "homepage": "https://github.com/Rafael-Euzebio/hidden-biometrics#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
