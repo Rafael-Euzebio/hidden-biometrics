@@ -46,6 +46,7 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
 - [Vite](https://vitejs.dev/).
 - [React](https://react.dev/).
 - [SCSS](https://sass-lang.com/documentation/syntax/).
+- [ClientJS](https://clientjs.org/).
 
 ### Backend
 - [Node.js](https://nodejs.org/en).
