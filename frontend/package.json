@@ -14,7 +14,8 @@
     "clientjs": "^0.2.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "webdriverio": "^8.36.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.5",
@@ -22,6 +23,8 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/browser": "^1.6.0",
+    "@vitest/coverage-istanbul": "^1.6.0",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",

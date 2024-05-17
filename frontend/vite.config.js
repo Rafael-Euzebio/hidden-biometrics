@@ -11,6 +11,9 @@ export default defineConfig({
       enabled: true,
       name: 'chrome', // browser name is required
       headless: true
+    },
+    coverage: {
+      provider: 'istanbul' // or 'v8'
     }
   }
 })
