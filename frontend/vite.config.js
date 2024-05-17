@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: 'jsdom',
-    setupFiles: './testSetup.js'
+    setupFiles: './testSetup.js',
+    browser: {
+      enabled: true,
+      name: 'chrome', // browser name is required
+      headless: true
+    }
   }
 })
