@@ -15,7 +15,7 @@ export default defineConfig({
     },
     coverage: {
       provider: 'istanbul', // or 'v8'
-      exclude: [...coverageConfigDefaults.exclude, '**/main.jsx/**']
+      exclude: [...coverageConfigDefaults.exclude, '**/main.jsx/**', '**/App.jsx/**']
     }
   }
 })
