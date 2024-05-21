@@ -1,0 +1,6 @@
+@use '../colors.scss' as *;
+
+.user__fingerprint {
+  font-weight:bold;
+  color: $monokai-accent-purple;
+}

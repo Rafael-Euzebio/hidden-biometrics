@@ -1,0 +1,6 @@
+@use '../colors.scss' as *;
+
+.app {
+  height: 100vh;
+  background-color: $monokai-background;
+}

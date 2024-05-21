@@ -1,0 +1,14 @@
+@use '../colors.scss' as *;
+
+.main {
+  text-align: center;
+}
+
+.main__heading {
+  color: $monokai-accent-orange;
+}
+
+.main__description {
+  color: $monokai-text;
+}
+
