@@ -1,0 +1,16 @@
+@use '../colors.scss' as *;
+.logo {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  &__icon{
+    color: $monokai-accent-orange;
+  }
+  &__title {
+    font-family: 'Montserratjj';
+    color: $monokai-accent-orange;
+  }
+}
+
