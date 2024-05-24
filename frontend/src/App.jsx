@@ -1,10 +1,12 @@
 import React from 'react'
 import User from './components/User'
+import Navbar from './components/Navbar'
 import Logo from './components/Logo'
 import userConfig from './utils/userConfig'
 import './styles/reset.scss'
 import './styles/blocks/app.scss'
 import './styles/blocks/main.scss'
+import './styles/blocks/header.scss'
 
 function App () {
   const { fingerprint, userInfo } = userConfig
@@ -12,6 +14,8 @@ function App () {
     <div className="app">
       <header className="header">
         <Logo />
+        <Navbar />
+      </header>
       <main className="main">
         <h1 className="main__heading"> Browser Fingerprinting</h1>
         <p className="main__description">A technique used to identify users by their browser and device characteristics, without relying on their IP address.</p>

@@ -12,4 +12,11 @@
     cursor: pointer;
   }
 
+  &--type-navbar {
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+  }
 }
