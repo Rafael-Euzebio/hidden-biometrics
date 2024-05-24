@@ -2,11 +2,8 @@
 
 .header {
   height: 8%;
-  display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-center(space-between);
   border-bottom: 2px solid $monokai-selection;
   padding-left: 2%;
 }
-

@@ -10,3 +10,8 @@ $monokai-accent-orange: #FD971F;
 $monokai-accent-yellow: #E6DB74;
 $monokai-accent-purple: #AE81FF;
 
+@mixin flex-center($justify-value) {
+  display: flex;
+  justify-content: $justify-value;
+  align-items: center;
+}
