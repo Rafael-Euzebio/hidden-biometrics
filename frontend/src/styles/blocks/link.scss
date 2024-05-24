@@ -1,0 +1,15 @@
+@use '../colors.scss' as *;
+
+.link {
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: color 0.5s, border-color;
+
+  &:hover {
+    background-color: $monokai-highlight;
+    color: $monokai-interaction-red;
+    border: 1px solid;
+    cursor: pointer;
+  }
+
+}
