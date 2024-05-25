@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fingerprint } from '@mui/icons-material'
-import '../styles/blocks/logo.scss'
-import '../styles/blocks/link.scss'
+import '@styles/blocks/logo.scss'
+import '@styles/blocks/link.scss'
 
 const Logo = () => {
   return (

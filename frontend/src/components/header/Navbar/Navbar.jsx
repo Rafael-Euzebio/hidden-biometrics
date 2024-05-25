@@ -1,8 +1,8 @@
 import React from 'react'
 import NavbarItem from './NavbarItem'
 import { Email, GitHub, LinkedIn } from '@mui/icons-material'
-import Link from './Link'
-import '../styles/blocks/navbar.scss'
+import Link from '@components/Link'
+import '@styles/blocks/navbar.scss'
 
 const Navbar = () => {
   const links = [

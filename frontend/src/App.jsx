@@ -1,12 +1,12 @@
 import React from 'react'
 import User from './components/User'
-import Navbar from './components/Navbar'
-import Logo from './components/Logo'
+import Navbar from './components/header/Navbar/Navbar'
+import Logo from './components/header/Logo/Logo'
 import userConfig from './utils/userConfig'
-import './styles/reset.scss'
-import './styles/blocks/app.scss'
-import './styles/blocks/main.scss'
-import './styles/blocks/header.scss'
+import '@styles/reset.scss'
+import '@styles/blocks/app.scss'
+import '@styles/blocks/main.scss'
+import '@styles/blocks/header.scss'
 
 function App () {
   const { fingerprint, userInfo } = userConfig

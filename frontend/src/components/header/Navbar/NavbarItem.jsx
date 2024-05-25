@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../styles/blocks/navbar.scss'
+import '@styles/blocks/navbar.scss'
 
 const NavbarItem = ({ component }) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../styles/blocks/link.scss'
+import '@styles/blocks/link.scss'
 
 const Link = ({ icon, text, href }) => {
   return (

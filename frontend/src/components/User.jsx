@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../styles/blocks/user.scss'
+import '@styles/blocks/user.scss'
 
 const UserInfo = ({ userInfo }) => {
   return (
