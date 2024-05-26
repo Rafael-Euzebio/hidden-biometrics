@@ -13,14 +13,14 @@ describe('<NavbarItem />', () => {
   })
 
   test('should throw an error if props is not provided', () => {
-    const spy = vi.spyOn(console, 'error')
+    const spyMock = vi.spyOn(console, 'error').mockImplementation(() => {})
     render(<NavbarItem />)
-    expect(spy.mock.calls.length).toBe(1)
+    expect(spyMock).toHaveBeenCalled()
   })
 
   test('should throw an error if props is not an React Element', () => {
-    const spy = vi.spyOn(console, 'error')
+    const spyMock = vi.spyOn(console, 'error').mockImplementation(() => {})
     render(<NavbarItem component="mock text"/>)
-    expect(spy.mock.calls.length).toBe(1)
+    expect(spyMock).toHaveBeenCalled()
   })
 })
