@@ -20,7 +20,9 @@ const Navbar = () => {
                 <Link
                   text={ link.text}
                   icon={ link.icon }
-                  href={ link.href } />
+                  href={ link.href } 
+                  modifier="link--type-icon"
+                /> 
               } key={link.href}
               />
             )

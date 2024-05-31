@@ -1,20 +1,29 @@
 @use '../globals.scss' as *;
 
 .link {
-  padding-left: 5px;
-  padding-right: 5px;
-  transition: color 0.5s, border-color;
+  color: $monokai-text;
 
-  &:hover {
-    background-color: $monokai-highlight;
-    color: $monokai-interaction-red;
-    border: 1px solid;
-    cursor: pointer;
+  &--type-text {
+    text-decoration: underline;
+    text-decoration-color: $monokai-interaction-red;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
   }
 
-  &--type-navbar {
+  &:hover {
+    cursor: pointer;
+    color: $monokai-interaction-red;
+    transition: color 0.5s, 
+  }
+
+  &--type-icon {
     height: 100%;
     width: 100%;
     @include flex-center(space-evenly);
+
+    &:hover {
+      border: 1px solid;
+      background-color: $monokai-highlight;
+    }
   }
 }

@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '@styles/blocks/link.scss'
 
-const Link = ({ icon, text, href }) => {
+const Link = ({ icon, text, href, modifier }) => {
   return (
-    <a className="link link--type-navbar" href={href}>
+    <a className={ `link ${modifier} `} href={href}>
       {text}
       {icon}
     </a>
