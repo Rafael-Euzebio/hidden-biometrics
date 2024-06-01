@@ -1,13 +1,15 @@
 @use '../globals.scss' as *;
 
 .main {
-  text-align: center;
-}
+  width: 50%;
+  margin: 20px auto;
 
-.main__heading {
-  color: $monokai-accent-orange;
-}
+  &__heading {
+    text-align: center;
+    color: $monokai-text;
+  }
 
-.main__description {
-  color: $monokai-text;
+  &__description {
+    color: $monokai-text;
+  }
 }
