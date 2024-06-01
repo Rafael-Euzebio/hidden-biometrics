@@ -1,16 +1,16 @@
 @use '../globals.scss' as *;
 
 .navbar {
-    height: 100%;
     width: 50%;
+    align-self: stretch;
     @include flex-center(space-evenly);
+
+  &__item{
+    width: 100%;
+    align-self: stretch;
+    @include flex-center(space-evenly);
+    color: $monokai-text;
+    font-weight: 700;
+  }
 }
 
-.navbar__item{
-  height: 100%;
-  width: 100%;
-  @include flex-center(space-evenly);
-  color: $monokai-text;
-  font-weight: 700;
-
-}
