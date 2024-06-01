@@ -1,7 +1,6 @@
 @use '../globals.scss' as *;
 
 .header {
-  flex-direction: row;
   @include flex-center(space-between);
   border-bottom: 2px solid $monokai-selection;
   padding-left: 2%;
