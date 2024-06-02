@@ -3,7 +3,7 @@
 .box {
   width: 70%;
   margin: 50px auto;
-  border: 1px solid $monokai-interaction-green;
+  border: 1px solid $monokai-accent-yellow;
   border-radius: 20px;
   @include flex-center(space-evenly);
   flex-direction: column;
