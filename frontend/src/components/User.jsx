@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import '@styles/blocks/user.scss'
+import '@styles/blocks/box.scss'
 
 const UserInfo = ({ userInfo }) => {
   return (
@@ -23,8 +24,11 @@ const UserInfo = ({ userInfo }) => {
 const User = ({ fingerprint, userInfo }) => {
   return (
     <div className="user">
-      <p className="main__description">This is yours:</p>
-      <span className="user__fingerprint">{fingerprint}</span>
+      <div className="box">
+        <span className="box__content">Your Fingerprint:</span>
+        <span className="box__content box__content--large">{fingerprint}</span>
+        <span className="box__content">Try switching to an anonymous tab or activating a VPN. It won't change</span>
+      </div>
       <UserInfo userInfo={userInfo}/>
     </div>
   )
