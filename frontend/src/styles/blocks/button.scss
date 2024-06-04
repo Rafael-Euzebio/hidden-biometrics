@@ -1,0 +1,22 @@
+@use '@styles/globals.scss' as *;
+
+.button {
+  color: $monokai-text;
+  transition: color 0.5s;
+
+  &:hover {
+    color: $monokai-interaction-green;
+  }
+
+  &--text-only {
+    border: none;
+
+    &:focus {
+      outline: none;
+      text-decoration: underline;
+      text-decoration-color: $monokai-interaction-green;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
+    }
+  }
+}

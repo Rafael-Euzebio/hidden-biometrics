@@ -1,0 +1,18 @@
+@use '@styles/globals.scss' as *;
+
+.collapsible {
+  margin: 10px; 
+
+  &__content {
+    margin: 5px;
+    color: $monokai-text;
+    margin-left: 40px;
+    transition: max-height 0.4s ease-in-out;
+    max-height: 0px;
+    overflow: hidden;
+
+    &--open {
+      max-height: 100px; 
+    }
+  }
+}
