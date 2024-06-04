@@ -28,6 +28,6 @@ module.exports = {
     'react'
   ],
   rules: {
-    'react/no-unescaped-entities': false
+    'react/no-unescaped-entities': 'off'
   }
 }
