@@ -27,7 +27,7 @@ const User = ({ fingerprint, userInfo }) => {
     <div className="user">
       <div className="box">
         <span className="box__content">Your Fingerprint:</span>
-        <span className="box__content box__content--large">{fingerprint}</span>
+        <span className="box__content box__content--large" id="fingerprint">{fingerprint}</span>
         <span className="box__content">Try switching to an anonymous tab or activating a VPN. It won't change</span>
       </div>
       <UserInfo userInfo={userInfo}/>

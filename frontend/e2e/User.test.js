@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 
 test('should find browser fingerprint', async ({ page }) => {
   await page.goto('http://localhost:5173')
-  const fingerprint = await page.locator('.user__fingerprint').innerHTML()
+  const fingerprint = await page.locator('fingerprint')
   expect(fingerprint).toBeDefined()
   expect(fingerprint).not.toBeNull()
 })
