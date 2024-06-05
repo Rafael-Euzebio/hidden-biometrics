@@ -2,7 +2,7 @@
 
 .button {
   color: $monokai-text;
-  transition: color 0.5s;
+  @include transition(color);
 
   &:hover {
     color: $monokai-interaction-green;
