@@ -5,11 +5,13 @@
   margin: 20px auto;
 
   &__heading {
+    font-size: 1.5rem;
     text-align: center;
     color: $monokai-text;
   }
 
   &__description {
+    font-size: 1rem;
     color: $monokai-text;
   }
 }
