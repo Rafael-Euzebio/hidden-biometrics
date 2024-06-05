@@ -1,6 +1,7 @@
 @use '../globals.scss' as *;
 .logo {
   height: 100%;
+  padding-left: 1.5em;
   @include flex-center(space-evenly);
 
   &__icon{
