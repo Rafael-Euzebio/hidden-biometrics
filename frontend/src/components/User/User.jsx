@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '@styles/blocks/user.scss'
 import '@styles/blocks/box.scss'
-import Collapsible from './Collapsible'
+import Collapsible from '@components/Collapsible/Collapsible'
 
 const UserInfo = ({ userInfo }) => {
   return (
