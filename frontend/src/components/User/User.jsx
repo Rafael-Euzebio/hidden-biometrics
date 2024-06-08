@@ -1,24 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import List from '@components/List/List'
+import Collapsible from '@components/Collapsible/Collapsible'
 import '@styles/blocks/user.scss'
 import '@styles/blocks/box.scss'
-import Collapsible from '@components/Collapsible/Collapsible'
 
 const UserInfo = ({ userInfo }) => {
+  const collapsibles = Object.keys(userInfo).map(key =>
+    <Collapsible
+      label={userInfo[key].text}
+      content={userInfo[key].value}
+      key={userInfo[key].text}
+    />
+  )
+
   return (
     <div>
       <p className="main__description">These are <strong>some</strong> information used to generate that fingerprint</p>
-        {
-          Object.keys(userInfo).map(key => {
-            return (
-              <Collapsible
-                label={userInfo[key].text}
-                content={userInfo[key].value}
-                key={userInfo[key].text}
-              />
-            )
-          })
-        }
+      <List items={collapsibles} />
     </div>
   )
 }

@@ -4,9 +4,9 @@ import '@styles/blocks/navbar.scss'
 
 const NavbarItem = ({ component }) => {
   return (
-    <li className = "navbar__item">
+    <div className = "navbar__item">
       {component}
-    </li>
+    </div>
   )
 }
 
