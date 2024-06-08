@@ -19,3 +19,10 @@ $monokai-accent-purple: #AE81FF;
 @mixin transition($transition-type) {
   transition: $transition-type 0.5s ease-in-out;
 }
+
+@mixin underline($color) {
+  text-decoration: underline;
+  text-decoration-color: $color;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}

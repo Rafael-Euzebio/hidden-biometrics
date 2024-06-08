@@ -5,10 +5,7 @@
   @include transition(color);
 
   &--type-text {
-    text-decoration: underline;
-    text-decoration-color: $monokai-interaction-red;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 7px;
+    @include underline($monokai-interaction-red);
   }
 
   &:hover {
