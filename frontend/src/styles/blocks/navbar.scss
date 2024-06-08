@@ -11,6 +11,10 @@
     @include flex-center(space-evenly);
     color: $monokai-text;
     font-weight: 700;
+
+    &:hover {
+      background-color: $monokai-highlight;
+    }
   }
 }
 
