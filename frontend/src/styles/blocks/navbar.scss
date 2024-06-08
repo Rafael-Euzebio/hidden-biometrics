@@ -9,6 +9,7 @@
     width: 100%;
     align-self: stretch;
     @include flex-center(space-evenly);
+    @include transition(color);
     color: $monokai-text;
     font-weight: 700;
 
