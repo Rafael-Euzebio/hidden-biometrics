@@ -14,7 +14,7 @@ const List = ({ items, modifier }) => {
       </ul>
     )
   } else {
-    return <div></div>
+    return <div data-testId="no-items"></div>
   }
 }
 

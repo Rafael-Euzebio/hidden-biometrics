@@ -21,6 +21,9 @@ describe('<List />', () => {
     }
   })
 
+  test('should return empty div if invalid items are passed as props', () => {
+    render(<List items={invalidProps.items} />)
+    expect(screen.getByTestId('no-items')).toBeVisible()
   })
 
   testPropTypes(List, validProps, invalidProps)
