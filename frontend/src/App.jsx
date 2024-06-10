@@ -25,9 +25,9 @@ function App () {
           It does not leave any trace (...) the user has no control over the collection process. <br/>
           (...) it can be identified on the web without the need of other identifiers like a cookie or an IP address."
         </p>
-        <Link 
-          text="Browser Fingerprinting: a survey" 
-          href="https://arxiv.org/pdf/1905.01051" 
+        <Link
+          text="Browser Fingerprinting: a survey"
+          href="https://arxiv.org/pdf/1905.01051"
           modifier="link--type-text"
         />
         <User fingerprint={fingerprint} userInfo={userInfo} />

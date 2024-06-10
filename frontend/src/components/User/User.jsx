@@ -6,12 +6,18 @@ import '@styles/blocks/user.scss'
 import '@styles/blocks/box.scss'
 
 const UserInfo = ({ userInfo }) => {
-  const collapsibles = Object.keys(userInfo).map(key =>
-    <Collapsible
-      label={userInfo[key].text}
-      content={userInfo[key].value}
-      key={userInfo[key].text}
-    />
+  const collapsibles = Object.keys(userInfo).map(key => {
+    if (userInfo[key].value !== undefined) {
+      return (
+      <Collapsible
+        label={userInfo[key].text}
+        content={userInfo[key].value}
+        key={userInfo[key].text}
+      />
+      )
+    }
+    return <div key={userInfo[key].text}></div>
+  }
   )
 
   return (
