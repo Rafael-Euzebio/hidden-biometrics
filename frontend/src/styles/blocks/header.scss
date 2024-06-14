@@ -1,4 +1,5 @@
 @use '../globals.scss' as *;
+@use '../mobile-styles.scss' as mobile-styles;
 
 .header {
   @include flex-center(space-between);
@@ -7,14 +8,7 @@
 
   &__menu {
     display: none;
-
-    @media (max-width: 700px) {
-      margin-right: 1em;
-      @include flex-center(space-evenly);
-    }
-  }
-
-  @media (max-width: 700px) {
-    flex-wrap: wrap;
   }
 }
+
+@include mobile-styles.header

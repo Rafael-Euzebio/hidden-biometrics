@@ -1,0 +1,40 @@
+@use './globals.scss' as *;
+
+$mobile-width: 700px;
+
+@mixin navbar {
+  @media (max-width: $mobile-width) {
+    .navbar {
+        width: 100%;
+        overflow: hidden;
+        max-height: 0px;
+        @include transition(max-height);
+
+        &--open{
+          display: block;
+          max-height: 500px;
+        }
+    }
+  }
+}
+
+@mixin list {
+  @media (max-width: $mobile-width) {
+    .list {
+      flex-direction: column;
+    }
+  }
+}
+
+@mixin header {
+  @media (max-width: $mobile-width) {
+    .header {
+      flex-wrap: wrap;
+
+      &__menu {
+        margin-right: 1em;
+        @include flex-center(space-evenly);
+      }
+    }
+  }
+}
