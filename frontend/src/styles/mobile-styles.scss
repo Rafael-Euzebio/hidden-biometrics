@@ -1,9 +1,10 @@
 @use './globals.scss' as *;
 
-$mobile-width: 700px;
+$large-mobile-width: 700px;
+$small-mobile-width: 360px;
 
 @mixin navbar {
-  @media (max-width: $mobile-width) {
+  @media (max-width: $large-mobile-width) {
     .navbar {
         width: 100%;
         overflow: hidden;
@@ -19,7 +20,7 @@ $mobile-width: 700px;
 }
 
 @mixin list {
-  @media (max-width: $mobile-width) {
+  @media (max-width: $large-mobile-width) {
     .list {
       flex-direction: column;
     }
@@ -27,13 +28,27 @@ $mobile-width: 700px;
 }
 
 @mixin header {
-  @media (max-width: $mobile-width) {
+  @media (max-width: $large-mobile-width) {
     .header {
       flex-wrap: wrap;
 
       &__menu {
         margin-right: 1em;
         @include flex-center(space-evenly);
+      }
+    }
+  }
+}
+
+@mixin logo {
+  @media (max-width: $small-mobile-width) {
+    .logo {
+      &__icon {
+        scale: 0.9;
+      }
+
+      &__title {
+        font-size: 1.7rem;
       }
     }
   }

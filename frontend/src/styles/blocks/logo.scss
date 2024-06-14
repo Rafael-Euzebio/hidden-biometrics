@@ -1,4 +1,5 @@
 @use '../globals.scss' as *;
+@use '../mobile-styles.scss' as mobile-styles;
 
 .logo {
   height: 100%;
@@ -10,7 +11,10 @@
   }
 
   &__title {
+    font-size: 2rem;
     font-family: 'Montserratjj';
     color: $monokai-accent-orange;
   }
 }
+
+@include mobile-styles.logo
