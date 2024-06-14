@@ -1,11 +1,14 @@
 @use '../globals.scss' as *;
 
 .list {
-
   &--horizontal{
     width: 100%;
     @include flex-center(space-evenly);
     align-self: stretch;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
   }
 }
 

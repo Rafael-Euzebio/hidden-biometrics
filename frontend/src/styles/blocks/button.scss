@@ -16,4 +16,8 @@
       @include underline($monokai-interaction-green);
     }
   }
+  &__icon{
+    scale: 2;
+  }
+
 }

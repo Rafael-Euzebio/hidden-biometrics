@@ -17,5 +17,18 @@
       background-color: $monokai-highlight;
     }
   }
+
+  
+  @media (max-width: 700px) {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0px;
+    @include transition(max-height);
+
+    &--open{
+      display: block;
+      max-height: 500px;
+    }
+  }
 }
 

@@ -5,7 +5,7 @@ import Link from '@components/Link/Link'
 import List from '@components/List/List'
 import '@styles/blocks/navbar.scss'
 
-const Navbar = () => {
+const Navbar = ({ modifier }) => {
   const links = [
     { text: '', icon: <GitHub />, href: 'https://github.com/Rafael-Euzebio/hidden-biometrics' },
     { text: '', icon: <LinkedIn />, href: 'https://www.linkedin.com/in/rafael-euzebio/' },
@@ -24,7 +24,7 @@ const Navbar = () => {
   ))
 
   return (
-    <nav className="navbar">
+    <nav className={ `navbar ${modifier}` }>
       <List
         modifier="list--horizontal"
         items={navbarItems}

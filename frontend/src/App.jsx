@@ -1,7 +1,6 @@
 import React from 'react'
+import Header from './components/Header/Header'
 import User from '@components/User/User'
-import Navbar from '@components/Navbar/Navbar'
-import Logo from '@components/Logo/Logo'
 import userConfig from './utils/userConfig'
 import '@styles/reset.scss'
 import '@styles/blocks/app.scss'
@@ -14,10 +13,7 @@ function App () {
 
   return (
     <div className="app">
-      <header className="header">
-        <Logo />
-        <Navbar />
-      </header>
+      <Header />
       <main className="main">
         <h2 className="main__heading"> Browser Fingerprinting</h2>
         <p className="main__description">
