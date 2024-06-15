@@ -1,15 +1,17 @@
 @use '@styles/globals.scss' as *;
 
 .collapsible {
-  margin: 10px; 
+  margin-top: 10px; 
+  white-space: nowrap;
 
   &__content {
     margin: 5px;
-    color: $monokai-text;
     margin-left: 40px;
-    @include transition(max-height);
-    max-height: 0px;
+    white-space: wrap;
+    color: $monokai-text;
     overflow: hidden;
+    max-height: 0px;
+    @include transition(max-height);
 
     &--open {
       max-height: 100px; 
