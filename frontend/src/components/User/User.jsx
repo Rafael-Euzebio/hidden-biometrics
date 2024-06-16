@@ -16,7 +16,7 @@ const UserInfo = ({ userInfo }) => {
       />
       )
     }
-    return <div key={userInfo[key].text}></div>
+    return <div data-testid="empty-div" key={userInfo[key].text}></div>
   }
   )
 
