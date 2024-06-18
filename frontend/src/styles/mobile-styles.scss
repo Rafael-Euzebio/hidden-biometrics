@@ -17,6 +17,14 @@ $small-mobile-width: 360px;
           display: block;
           max-height: 500px;
         }
+
+        &__item {
+          padding: 1em;
+
+          &:hover {
+            border: none;
+          }
+        }
     }
   }
 }

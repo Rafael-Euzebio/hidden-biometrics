@@ -17,9 +17,5 @@
     height: 100%;
     width: 100%;
     @include flex-center(space-evenly);
-
-    &:hover {
-      border: 1px solid;
-    }
   }
 }

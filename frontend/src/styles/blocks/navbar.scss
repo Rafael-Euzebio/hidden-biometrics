@@ -2,19 +2,20 @@
 @use '../mobile-styles.scss' as mobile-styles;
 
 .navbar {
-    width: 50%;
-    align-self: stretch;
-    @include flex-center(space-evenly);
+  width: 50%;
+  align-self: stretch;
+  @include flex-center(space-evenly);
 
   &__item{
     width: 100%;
     align-self: stretch;
     @include flex-center(space-evenly);
-    @include transition(color);
+    @include transition(color border-color);
     color: $monokai-text;
     font-weight: 700;
 
     &:hover {
+      border: 1px solid $monokai-interaction-red;
       background-color: $monokai-highlight;
     }
   }
