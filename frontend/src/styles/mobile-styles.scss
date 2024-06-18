@@ -9,9 +9,11 @@ $small-mobile-width: 360px;
         width: 100%;
         overflow: hidden;
         max-height: 0px;
-        @include transition(max-height);
+        visibility: collapse;
+        @include transition(max-height visibility);
 
         &--open{
+          visibility: visible;
           display: block;
           max-height: 500px;
         }
