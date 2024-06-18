@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 
 describe('<Navbar />', () => {
   test('should render links', () => {
-    const { container } = render(<Navbar />)
+    const { container } = render(<Navbar modifier="navbar--open"/>)
     const list = screen.getByRole('list')
     expect(list).toBeVisible()
     const items = container.getElementsByClassName('navbar__item')
