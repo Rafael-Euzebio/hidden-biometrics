@@ -22,7 +22,7 @@ export default defineConfig({
       '**/e2e/**'],
     coverage: {
       provider: 'istanbul', // or 'v8'
-      exclude: [...coverageConfigDefaults.exclude, '**/main.jsx/**', '**/App.jsx/**', '**/e2e/**']
+      exclude: [...coverageConfigDefaults.exclude, '**/main.jsx/**', '**/App.jsx/**', '**/e2e/**', '**/playwright.config.js/**']
     }
   },
   resolve: {
