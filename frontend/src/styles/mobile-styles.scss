@@ -20,6 +20,7 @@ $small-mobile-width: 360px;
 
         &__item {
           padding: 1em;
+          border-bottom: 1px solid $monokai-selection;
 
           &:hover {
             border: none;
