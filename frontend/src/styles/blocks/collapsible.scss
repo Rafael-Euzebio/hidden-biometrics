@@ -3,17 +3,19 @@
 .collapsible {
   margin-top: 10px; 
   white-space: nowrap;
+  color: $monokai-text;
 
   &__content {
     margin: 5px;
     margin-left: 40px;
     white-space: wrap;
-    color: $monokai-text;
     overflow: hidden;
+    visibility: collapse;
     max-height: 0px;
-    @include transition(max-height);
+    @include transition(max-height visibility);
 
     &--open {
+      visibility: visible;
       max-height: 100px; 
     }
   }
