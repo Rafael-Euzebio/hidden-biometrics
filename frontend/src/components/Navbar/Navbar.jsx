@@ -3,23 +3,43 @@ import NavbarItem from './NavbarItem'
 import { Email, GitHub, LinkedIn } from '@mui/icons-material'
 import Link from '@components/Link/Link'
 import List from '@components/List/List'
+import PropTypes from 'prop-types'
 import '@styles/blocks/navbar.scss'
 
 const Navbar = ({ modifier }) => {
   const links = [
-    { text: '', icon: <GitHub />, href: 'https://github.com/Rafael-Euzebio/hidden-biometrics' },
-    { text: '', icon: <LinkedIn />, href: 'https://www.linkedin.com/in/rafael-euzebio/' },
-    { text: '', icon: <Email />, href: 'mailto:rafaeleuzebiomendes@protonmail.com' }
+    {
+      text: '',
+      icon: <GitHub />,
+      label: 'Go to Github page',
+      href: 'https://github.com/Rafael-Euzebio/hidden-biometrics'
+    },
+    {
+      text: '',
+      icon: <LinkedIn />,
+      label: 'Go to LinkedIn page',
+      href: 'https://www.linkedin.com/in/rafael-euzebio/'
+    },
+    {
+      text: '',
+      icon: <Email />,
+      label: "Email the project's author",
+      href: 'mailto:rafaeleuzebiomendes@protonmail.com'
+    }
   ]
 
   const navbarItems = links.map((link, index) => (
     <NavbarItem
       key={index}
-      component={<Link
-        text={link.text}
-        icon={link.icon} href={link.href}
-        modifier='link--type-icon'
-      />}
+      component={
+        <Link
+          text={link.text}
+          icon={link.icon}
+          label={link.label}
+          href={link.href}
+          modifier='link--type-icon'
+        />
+      }
     />
   ))
 
@@ -33,4 +53,7 @@ const Navbar = ({ modifier }) => {
   )
 }
 
+Navbar.propTypes = {
+  modifier: PropTypes.string
+}
 export default Navbar

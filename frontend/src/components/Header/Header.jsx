@@ -15,7 +15,7 @@ const Header = () => {
   return (
       <header className="header">
         <Logo />
-        <button className="header__menu button" onClick={handleClick}>
+        <button className="header__menu button" aria-label="menu button" onClick={handleClick}>
           {!menuOpen ? <Menu className="button__icon" /> : <Close className="button__icon"/>}
         </button>
         <Navbar modifier={menuOpen ? 'navbar--open' : ''}/>
