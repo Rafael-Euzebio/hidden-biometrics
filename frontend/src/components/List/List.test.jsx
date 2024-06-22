@@ -1,5 +1,5 @@
 import React from 'react'
-import { describe, test, expect } from 'vitest'
+import { describe, test, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import List from './List'
 import testPropTypes from '../../test-helpers/test-helpers'
@@ -22,8 +22,10 @@ describe('<List />', () => {
   })
 
   test('should return empty div if invalid items are passed as props', () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
     render(<List items={invalidProps.items} />)
     expect(screen.getByTestId('no-items')).toBeVisible()
+    expect(spy).toHaveBeenCalled()
   })
 
   testPropTypes(List, validProps, invalidProps)
