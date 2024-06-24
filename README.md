@@ -24,6 +24,7 @@ As a personal project it also serves the purpose to apply my knowledge about web
 - [ ] Add sections explaining the uses for Browser Fingerprint.
 - [ ] Display statistics.
 - [x] Improve responsiveness
+- [ ] Add multi-language suport
 
 ## Portuguese :brazil:
 
@@ -42,6 +43,8 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
 - [ ] Adicionar sessões sobre os diferentes usos de Impressão Digital de Browser.
 - [ ] Exibir estatísticas.
 - [x] Melhore a responsividade.
+- [ ] Adicionar suporte para múltiplos idiomas
+
 
 ## Tech Stack
 ### Frontend
