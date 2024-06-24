@@ -23,6 +23,7 @@ As a personal project it also serves the purpose to apply my knowledge about web
     - [ ] Allow deletion
 - [ ] Add sections explaining the uses for Browser Fingerprint.
 - [ ] Display statistics.
+- [x] Improve responsiveness
 
 ## Portuguese :brazil:
 
@@ -40,6 +41,7 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
     - [ ] Permitir deleção.
 - [ ] Adicionar sessões sobre os diferentes usos de Impressão Digital de Browser.
 - [ ] Exibir estatísticas.
+- [x] Melhore a responsividade.
 
 ## Tech Stack
 ### Frontend
