@@ -11,19 +11,19 @@ const Navbar = ({ modifier }) => {
     {
       text: '',
       icon: <GitHub />,
-      label: 'Go to Github page',
+      label: 'Github',
       href: 'https://github.com/Rafael-Euzebio/hidden-biometrics'
     },
     {
       text: '',
       icon: <LinkedIn />,
-      label: 'Go to LinkedIn page',
+      label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/rafael-euzebio/'
     },
     {
       text: '',
       icon: <Email />,
-      label: "Email the project's author",
+      label: 'Email',
       href: 'mailto:rafaeleuzebiomendes@protonmail.com'
     }
   ]
