@@ -6,6 +6,8 @@
 
 ### 2024-06-25
 - Improved readability.
+- Fixed navbar responsiveness bug on Firefox.
+- Added title and favicon.
 
 ### 2024-06-24
 - Improved readability.
@@ -24,6 +26,8 @@
 
 ### 2024-06-25
 - Legibilidade melhorada 
+- Bug de responsividade da navbar no Firefox foi consertado.
+- Titulo e favicon foi adicionado.
 
 ### 2024-06-24
 - Legibilidade melhorada.
