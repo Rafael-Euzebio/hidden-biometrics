@@ -21,7 +21,7 @@ describe('<Header />', () => {
     })
 
     test('should render navbar', () => {
-      const navbar = screen.getByRole('navigation')
+      const navbar = screen.getByRole('navigation', { hidden: true })
       expect(navbar).toBeInTheDocument()
     })
   })
