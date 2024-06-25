@@ -1,16 +1,22 @@
 @use '../globals.scss' as *;
+@use '../mobile-styles.scss' as mobile-styles;
 
 .main {
   width: 50%;
   margin: 20px auto;
+  line-height: 1.8;
 
   &__heading {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: center;
+    margin-bottom: 0.2em;
     color: $monokai-text;
   }
 
   &__description {
     color: $monokai-text;
+    font-size: 1.1rem;
   }
 }
+
+@include mobile-styles.main
