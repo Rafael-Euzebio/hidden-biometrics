@@ -4,6 +4,9 @@
 
 ## English :us:
 
+### 2024-06-25
+- Improved readability.
+
 ### 2024-06-24
 - Improved readability.
 - Improved responsiveness.
@@ -18,6 +21,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-06-25
+- Legibilidade melhorada 
 
 ### 2024-06-24
 - Legibilidade melhorada.
