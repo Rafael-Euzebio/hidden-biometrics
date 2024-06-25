@@ -64,3 +64,11 @@ $small-mobile-width: 360px;
     }
   }
 }
+
+@mixin main {
+  @media (max-width: $large-mobile-width) {
+    .main {
+      width: 80%;
+    }
+  }
+}
