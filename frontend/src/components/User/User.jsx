@@ -22,7 +22,7 @@ const UserInfo = ({ userInfo }) => {
 
   return (
     <div>
-      <p className="main__description">These are <strong>some</strong> information used to generate that fingerprint</p>
+      <p className="main__description">These are <strong>some</strong> information used to generate that fingerprint:</p>
       <List items={collapsibles} />
     </div>
   )
@@ -31,9 +31,9 @@ const User = ({ fingerprint, userInfo }) => {
   return (
     <div className="user">
       <div className="box">
-        <span className="box__content">Your Fingerprint:</span>
-        <span className="box__content box__content--large" id="fingerprint">{fingerprint}</span>
-        <span className="box__content">Try switching to an anonymous tab or activating a VPN. It won't change</span>
+        <p className="box__content">Your Fingerprint:</p>
+        <p className="box__content box__content--large" id="fingerprint">{fingerprint}</p>
+        <p className="box__content">Try switching to an anonymous tab or activating a VPN. <br/> It won't change.</p>
       </div>
       <UserInfo userInfo={userInfo}/>
     </div>
