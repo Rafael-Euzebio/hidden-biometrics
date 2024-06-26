@@ -5,19 +5,19 @@ import '@styles/blocks/button.scss'
 import { ArrowDropDown, ArrowRight } from '@mui/icons-material'
 
 const Collapsible = ({ label, content }) => {
-  const [isCollapsed, setIsCollapsed] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed)
+    setIsOpen(!isOpen)
   }
 
-  const arrow = isCollapsed ? <ArrowRight /> : <ArrowDropDown />
+  const arrow = isOpen ? <ArrowDropDown /> : <ArrowRight />
 
   const collapsibleContent = <p
     className={
-      `collapsible__content ${isCollapsed
-      ? ''
-      : 'collapsible__content--open'}`
+      `collapsible__content ${isOpen
+      ? 'collapsible__content--open'
+      : ''}`
     }>
     { content }
   </p>
@@ -26,7 +26,8 @@ const Collapsible = ({ label, content }) => {
     <div className="collapsible">
       <button
         className = "button button--text-only"
-        onClick={toggleCollapse}>
+        onClick={toggleCollapse}
+        >
         { arrow } { label }
       </button>
       { collapsibleContent }
