@@ -14,7 +14,7 @@ describe('<NavbarItem />', () => {
     component: 1
   }
 
-  test('should render component passed as props', () => {
+  test('should display component passed as props', () => {
     render(<NavbarItem component={validProps.component} />)
     const renderedComponent = screen.getByText('mock component')
     expect(renderedComponent).toBeVisible()

@@ -14,7 +14,7 @@ describe('<List />', () => {
     modifier: 1
   }
 
-  test('should render a list with every item from the array passed as props', () => {
+  test('should display a list with every item from the array passed as props', () => {
     render(<List items={validProps.items} modifier={validProps.modifier}/>)
     for (const item of validProps.items) {
       expect(screen.getByText(item)).toBeVisible()

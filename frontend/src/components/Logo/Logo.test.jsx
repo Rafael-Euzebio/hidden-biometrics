@@ -4,13 +4,13 @@ import { render, screen } from '@testing-library/react'
 import Logo from './Logo'
 
 describe('<Logo />', () => {
-  test('should render heading visibly', () => {
+  test('should display heading', () => {
     render(<Logo />)
     const logoText = screen.getByText('Hidden Biometrics')
     expect(logoText).toBeVisible()
   })
 
-  test('should render logo icon visibly', () => {
+  test('should display logo icon', () => {
     const { container } = render(<Logo />)
     const logoIcon = container.getElementsByClassName('logo__icon')[0]
     expect(logoIcon).toBeVisible()

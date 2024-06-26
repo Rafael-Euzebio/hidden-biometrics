@@ -10,7 +10,7 @@ describe('<Header />', () => {
       render(<Header />)
     })
 
-    test('should render logo', async () => {
+    test('should display render logo', async () => {
       const logo = screen.getByRole('heading')
       expect(logo).toBeVisible()
     })

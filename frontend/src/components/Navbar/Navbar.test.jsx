@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 import Navbar from './Navbar'
 
 describe('<Navbar />', () => {
-  test('should render links', () => {
+  test('should display links', () => {
     const { container } = render(<Navbar modifier="navbar--open"/>)
     const list = screen.getByRole('list')
     expect(list).toBeVisible()

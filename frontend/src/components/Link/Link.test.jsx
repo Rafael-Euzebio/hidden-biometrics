@@ -24,7 +24,7 @@ describe('<Link />', () => {
 
   const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
 
-  test('should render link and icon', async () => {
+  test('should display link and icon', async () => {
     render(<Link
       icon={validProps.icon}
       text={validProps.text}
