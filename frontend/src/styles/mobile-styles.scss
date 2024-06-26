@@ -1,7 +1,7 @@
 @use './globals.scss' as *;
 
 $large-mobile-width: 700px;
-$small-mobile-width: 360px;
+$small-mobile-width: 370px;
 
 @mixin navbar {
   @media (max-width: $large-mobile-width) {
@@ -39,13 +39,20 @@ $small-mobile-width: 360px;
 }
 
 @mixin header {
-  @media (max-width: $large-mobile-width) {
-    .header {
+  .header {
+    @media (max-width: $large-mobile-width) {
       flex-wrap: wrap;
+    }
 
-      &__menu {
-        margin-right: 1em;
+    &__menu {
+      @media (max-width: $large-mobile-width) {
+        margin-right: 1rem;
         @include flex-center(space-evenly);
+      }
+
+      @media (max-width: $small-mobile-width) {
+        margin-right: 0.5rem;
+        scale: 0.9;
       }
     }
   }
@@ -54,6 +61,7 @@ $small-mobile-width: 360px;
 @mixin logo {
   @media (max-width: $small-mobile-width) {
     .logo {
+      margin-left: 0.5rem;
       &__icon {
         scale: 0.9;
       }

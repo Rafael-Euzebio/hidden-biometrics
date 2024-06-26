@@ -3,6 +3,7 @@
 
 .navbar {
   width: 50%;
+  margin-right: 0.2rem;
   align-self: stretch;
   @include flex-center(space-evenly);
 
