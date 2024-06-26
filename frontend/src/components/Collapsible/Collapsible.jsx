@@ -27,6 +27,7 @@ const Collapsible = ({ label, content }) => {
       <button
         className = "button button--text-only"
         onClick={toggleCollapse}
+        aria-expanded={isOpen}
         >
         { arrow } { label }
       </button>
