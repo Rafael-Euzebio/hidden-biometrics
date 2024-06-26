@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test'
+import { url, desktopBrowsers, mobileBrowsers } from './constants'
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:5173')
+  await page.goto(url)
 })
 
 test.describe('content', () => {
@@ -10,14 +11,10 @@ test.describe('content', () => {
     expect(fingerprint.trim().length).toBeGreaterThan(0)
   })
 
-  test('should find browser information matching current browser', async ({ page, browserName }) => {
-    const browsers = {
-      chromium: 'Chrome',
-      firefox: 'Firefox',
-      webkit: 'Safari'
-    }
-    await page.getByRole('button', { name: 'Browser', exact: true }).click()
+  test('should find browser information matching current browser', async ({ page, browserName, isMobile }) => {
+    const browsers = isMobile ? mobileBrowsers : desktopBrowsers
 
+    await page.getByRole('button', { name: 'Browser', exact: true }).click()
     const currentBrowser = page.getByText(browsers[browserName], { exact: true })
     await expect(currentBrowser).toBeVisible()
   })
