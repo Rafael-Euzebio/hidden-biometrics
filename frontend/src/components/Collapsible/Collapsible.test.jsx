@@ -34,6 +34,7 @@ describe('<Collapsible />', () => {
     const user = userEvent.setup()
     const label = screen.getByText('mockLabel')
     await user.click(label)
+    expect(label).toHaveAttribute('aria-expanded', 'true')
     const content = screen.getByText('mockContent')
     await waitFor(() => {
       expect(content).toBeVisible()
