@@ -4,6 +4,10 @@
 
 ## English :us:
 
+### 2024-06-26
+- Improved collapsible buttons accessibility.
+    - Now screen readers are able to tell if the content is collapsed or not.
+
 ### 2024-06-25
 - Improved readability.
 - Fixed navbar responsiveness bug on Firefox.
@@ -23,6 +27,8 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+- Acessibilidade de botões colapsáveis melhorada.
+    - Agora leitores de tela identificam se o conteúdo esta colapsado ou não.
 
 ### 2024-06-25
 - Legibilidade melhorada 
