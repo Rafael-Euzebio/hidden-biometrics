@@ -27,13 +27,14 @@ describe('<Header />', () => {
   })
 
   describe('interaction', () => {
-    test('should render menu button', async () => {
-      const { container } = render(<Header />)
+    test('should open navbar on menu click', async () => {
+      render(<Header />)
       const button = screen.getByRole('button')
       const user = userEvent.setup()
+      const navbar = screen.getByRole('navigation', { hidden: true })
       await user.click(button)
-      const openNavbar = container.getElementsByClassName('navbar--open')[0]
-      expect(openNavbar).toBeInTheDocument()
+      expect(button).toHaveAttribute('aria-expanded', 'true')
+      expect(navbar).toHaveClass('navbar--open')
     })
   })
 })
