@@ -1,0 +1,23 @@
+{ 
+  "heading-2": "Impressão Digital de Navegador",
+  "main": {
+    "description": "(...) um conjunto de informações relacionados ao dispositivo do usuário, de seu hardware, sistema operacional, navegador e suas configurações (...) Não deixa nenhum tipo de rastro (...) o usuário não tem controle sobre o processo de coleta. (...) pode ser identificado na web sem a necessidade de outros identificadores como um cookie ou endereço de IP." ,
+    "collapsibles": {
+      "description": "Essas são <0>algumas</0> informções usadas para gerar sua impressão digital.",
+      "User Agent": "Agente de Usuário",
+      "Browser": "Navegador",
+      "Browser Version": "Versão do Navegador",
+      "Operational System": "Sistema Operacional",
+      "OS Version": "Versão do Sistema Operacional",
+      "CPU": "Processador",
+      "Current Resolution": "Resolução Atual",
+      "Installed Plugins": "Plugins Instalados",
+      "Installed Fonts": "Fontes Instaladas"
+    }
+  },
+  "research": "Impressão Digital de Navegador: Uma Pesquisa. (em inglês)",
+  "box": {
+    "upper": "Sua Impressão Digital",
+    "lower": "Tente trocar para uma aba anônima ou ativar uma VPN. <0/> Ela não ira mudar."
+  }
+}

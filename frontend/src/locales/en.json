@@ -1,0 +1,23 @@
+{ 
+  "heading-2": "Browser Fingerprinting",
+  "main": {
+    "description": "(...) a set of information related to a user’s device from the hardware to the operating system to the browser and its configuration (...) It does not leave any trace (...) the user has no control over the collection process. (...) it can be identified on the web without the need of other identifiers like a cookie or an IP address.", 
+    "collapsibles": {
+      "description": " These are <0>some</0> information used to generate your fingerprint: ",
+      "User Agent": "User Agent",
+      "Browser": "Browser",
+      "Browser Version": "Browser Version",
+      "Operational System": "Operational System",
+      "OS Version": "OS Version",
+      "CPU": "CPU",
+      "Current Resolution": "Current Resolution",
+      "Installed Plugins": "Installed Plugins",
+      "Installed Fonts": "Installed Fonts"
+    }
+  },
+  "research": "Browser Fingeprinting: A survey.",
+  "box": {
+    "upper": "Your Fingeprint",
+    "lower": "Try switching to an anonymous tab or activating a VPN. <0/> It won't change."
+  }
+}
