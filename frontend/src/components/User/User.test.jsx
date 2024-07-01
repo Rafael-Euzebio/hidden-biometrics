@@ -2,7 +2,7 @@ import React from 'react'
 import { beforeEach, describe, expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import User from './User'
-import testPropTypes from '../../test-helpers/test-helpers'
+import { testPropTypes } from '@test-helpers/test-helpers'
 
 describe('<User />', () => {
   const validProps = {

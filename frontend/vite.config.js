@@ -28,7 +28,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@styles': `${path.resolve(__dirname, './src/styles')}`,
-      '@components': `${path.resolve(__dirname, './src/components')}`
+      '@components': `${path.resolve(__dirname, './src/components')}`,
+      '@test-helpers':`${path.resolve(__dirname, './src/test-helpers')}`, 
     }
   }
 })

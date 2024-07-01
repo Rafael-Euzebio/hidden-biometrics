@@ -1,9 +1,8 @@
 import { describe, test, expect, beforeEach } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import React from 'react'
 import Collapsible from './Collapsible'
-import testPropTypes from '../../test-helpers/test-helpers'
+import { renderWithTranslation, testPropTypes } from '@test-helpers/test-helpers'
 
 describe('<Collapsible />', () => {
   const validProps = {

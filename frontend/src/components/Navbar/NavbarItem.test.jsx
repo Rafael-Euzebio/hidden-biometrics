@@ -2,7 +2,7 @@ import React from 'react'
 import { describe, test, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import NavbarItem from './NavbarItem'
-import testPropTypes from '../../test-helpers/test-helpers'
+import { testPropTypes } from '@test-helpers/test-helpers'
 
 describe('<NavbarItem />', () => {
   const MockComponent = () => <p>mock component</p>
