@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import React from 'react'
 import Link from './Link'
 import { GitHub } from '@mui/icons-material'
-import { testPropTypes } from 'test-helpers/test-helpers'
+import { testPropTypes } from '@test-helpers/test-helpers'
 
 describe('<Link />', () => {
   const validProps = {
