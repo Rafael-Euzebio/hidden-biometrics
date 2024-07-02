@@ -18,7 +18,7 @@ function App () {
     <div className="app">
       <Header />
       <main className="main">
-        <h2 className="main__heading"> { t('heading-2') }</h2>
+        <h2 className="main__heading"> { t('main.heading-2') }</h2>
         <p className="main__description">
           { t('main.description') }
         </p>

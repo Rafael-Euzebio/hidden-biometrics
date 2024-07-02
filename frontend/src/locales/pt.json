@@ -1,6 +1,6 @@
 { 
-  "heading-2": "Impressão Digital de Navegador",
   "main": {
+    "heading-2": "Impressão Digital de Navegador",
     "description": "(...) um conjunto de informações relacionados ao dispositivo do usuário, de seu hardware, sistema operacional, navegador e suas configurações (...) Não deixa nenhum tipo de rastro (...) o usuário não tem controle sobre o processo de coleta. (...) pode ser identificado na web sem a necessidade de outros identificadores como um cookie ou endereço de IP." ,
     "collapsibles": {
       "description": "Essas são <0>algumas</0> informções usadas para gerar sua impressão digital.",
