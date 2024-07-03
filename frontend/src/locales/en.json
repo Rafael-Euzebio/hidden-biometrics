@@ -15,9 +15,9 @@
       "Installed Fonts": "Installed Fonts"
     }
   },
-  "research": "Browser Fingeprinting: A survey.",
+  "research": "Browser Fingerprinting: A survey.",
   "box": {
-    "upper": "Your Fingeprint",
+    "upper": "Your Fingerprint:",
     "lower": "Try switching to an anonymous tab or activating a VPN. <0/> It won't change."
   }
 }
