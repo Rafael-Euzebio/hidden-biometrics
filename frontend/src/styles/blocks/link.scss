@@ -3,6 +3,7 @@
 .link {
   color: $monokai-text;
   @include transition(color);
+  @include itemFocus();
 
   &--type-text {
     @include underline($monokai-interaction-red);
