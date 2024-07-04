@@ -1,0 +1,21 @@
+@use '@styles/globals.scss' as *;
+
+.select {
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+  align-self: stretch;
+  border: none;
+  color: $monokai-text;
+  font-size: 1rem;
+  @include transition(color border-color);
+  @include itemFocus();
+
+  &:hover {
+    background-color: $monokai-highlight;
+  }
+  &__option {
+    color: $monokai-text;
+    background-color: $monokai-background;
+  }
+}

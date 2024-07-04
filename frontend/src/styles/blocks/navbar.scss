@@ -8,6 +8,7 @@
   @include flex-center(space-evenly);
 
   &__item{
+    background-color: $monokai-background;
     width: 100%;
     align-self: stretch;
     @include flex-center(space-evenly);
@@ -19,6 +20,8 @@
       border: 1px solid $monokai-interaction-red;
       background-color: $monokai-highlight;
     }
+
+
   }
 
 }
