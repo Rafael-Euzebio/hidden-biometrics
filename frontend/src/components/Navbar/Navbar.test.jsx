@@ -18,4 +18,9 @@ describe('<Navbar />', () => {
       expect(link).toBeVisible()
     }
   })
+
+  test('shoud display language switcher', () => {
+    const languageSwitcher = screen.getByLabelText('language selector')
+    expect(languageSwitcher).toBeVisible()
+  })
 })
