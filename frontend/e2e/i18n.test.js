@@ -48,6 +48,31 @@ test.describe('internationalization', () => {
 
       translationTests(language)
     })
+
+    test.describe((`when user selects ${language}`), () => {
+      test.describe('desktop', () => {
+        test.beforeEach(async ({ page }) => {
+          await page.goto(urls.base)
+          const languageSwitcher = page.getByRole('combobox')
+          await languageSwitcher.selectOption(language)
+        })
+
+        translationTests(language)
+      })
+
+      test.describe('mobile', () => {
+        test.beforeEach(async ({ page }) => {
+          await page.goto(urls.base)
+          const menu = page.getByLabel('menu button')
+          await menu.click()
+          const languageSwitcher = page.getByRole('combobox')
+          await expect(languageSwitcher).toBeVisible()
+          await languageSwitcher.selectOption(language)
+        })
+
+        translationTests(language)
+      })
+    })
   }
 
   test.describe(('fallbacks to en when subdomain or locale is not set'), () => {
