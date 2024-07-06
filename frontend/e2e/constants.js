@@ -1,8 +1,4 @@
-const urls = {
-  base: 'http://localhost:5173',
-  en: 'http://en.localhost:5173',
-  pt: 'http://pt.localhost:5173'
-}
+const url = 'http://localhost:5173'
 
 const mobileBrowsers = {
   chromium: 'Chrome',
@@ -30,4 +26,4 @@ const translations = {
   }
 }
 
-export { urls, desktopBrowsers, mobileBrowsers, translations }
+export { url, desktopBrowsers, mobileBrowsers, translations }

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { urls, translations } from './constants'
+import { url, translations } from './constants'
 
 const translationTests = (language) => {
   const translation = translations[language]
@@ -31,7 +31,7 @@ test.describe('internationalization', () => {
   for (const language in translations) {
     test.describe((`when locale is set to ${language}`), () => {
       test.beforeEach(async ({ page }) => {
-        await page.goto(urls.base)
+        await page.goto(url)
       })
 
       test.use({
@@ -41,9 +41,9 @@ test.describe('internationalization', () => {
       translationTests(language)
     })
 
-    test.describe((`when subdomain is ${language}`), () => {
+    test.describe((`when querystring is ${language}`), () => {
       test.beforeEach(async ({ page }) => {
-        await page.goto(urls[language])
+        await page.goto(`${url}?lng=${language}`)
       })
 
       translationTests(language)
@@ -52,7 +52,7 @@ test.describe('internationalization', () => {
     test.describe((`when user selects ${language}`), () => {
       test.describe('desktop', () => {
         test.beforeEach(async ({ page }) => {
-          await page.goto(urls.base)
+          await page.goto(url)
           const languageSwitcher = page.getByRole('combobox')
           await languageSwitcher.selectOption(language)
         })
@@ -62,7 +62,7 @@ test.describe('internationalization', () => {
 
       test.describe('mobile', () => {
         test.beforeEach(async ({ page }) => {
-          await page.goto(urls.base)
+          await page.goto(url)
           const menu = page.getByLabel('menu button')
           await menu.click()
           const languageSwitcher = page.getByRole('combobox')
@@ -77,7 +77,7 @@ test.describe('internationalization', () => {
 
   test.describe(('fallbacks to en when subdomain or locale is not set'), () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto(urls.base)
+      await page.goto(url)
     })
 
     translationTests('en')

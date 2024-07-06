@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test'
-import { urls } from './constants'
+import { url } from './constants'
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(urls.base)
+  await page.goto(url)
 })
 
 test.describe('navbar visibility', () => {
