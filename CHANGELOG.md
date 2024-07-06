@@ -4,9 +4,12 @@
 
 ## English :us:
 
+### 2024-07-06
+- Bugfix: page does not load when language subdomains are added to the url
+    - Repalces subdomains with language querystrings, e.g `https://hiddne-biometrics.onrender.com/?lng=pt`
+
 ### 2024-07-05
 - Implemented Portuguese language support
-    - Available in `https://pt.hidden-biometrics.on-render.com`
 
 ### 2024-06-26
 - Improved collapsible buttons accessibility.
@@ -31,6 +34,10 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-07-06
+- correção de bug: página não carrega ao tentar acessar url com subdomínio do idioma
+    - Substitui subdominios por querystrings e.g `https://hiddne-biometrics.onrender.com/?lng=pt`
 
 ### 2024-07-05
 - Conteúdo disponível em português
