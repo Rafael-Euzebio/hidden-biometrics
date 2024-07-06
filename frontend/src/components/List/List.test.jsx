@@ -2,7 +2,7 @@ import React from 'react'
 import { describe, test, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import List from './List'
-import testPropTypes from '../../test-helpers/test-helpers'
+import { testPropTypes } from '@test-helpers/test-helpers'
 
 describe('<List />', () => {
   const validProps = {

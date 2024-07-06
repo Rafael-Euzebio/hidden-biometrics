@@ -28,3 +28,16 @@ $monokai-accent-purple: #AE81FF;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
 }
+
+@mixin itemFocus() {
+  &:hover {
+    cursor: pointer;
+    color: $monokai-interaction-red;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $monokai-interaction-red;
+    color: $monokai-interaction-red;
+  }
+}

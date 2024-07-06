@@ -7,22 +7,23 @@ import '@styles/blocks/app.scss'
 import '@styles/blocks/main.scss'
 import '@styles/blocks/header.scss'
 import Link from '@components/Link/Link'
+import { useTranslation } from 'react-i18next'
 
 function App () {
   const { fingerprint, userInfo } = userConfig
+
+  const { t } = useTranslation()
 
   return (
     <div className="app">
       <Header />
       <main className="main">
-        <h2 className="main__heading"> Browser Fingerprinting</h2>
+        <h2 className="main__heading"> { t('main.heading-2') }</h2>
         <p className="main__description">
-          "(...) a set of information related to a user’s device from the hardware to the operating system to the browser and its configuration (...)
-          It does not leave any trace (...) the user has no control over the collection process. <br/>
-          (...) it can be identified on the web without the need of other identifiers like a cookie or an IP address."
+          { t('main.description') }
         </p>
         <Link
-          text="Browser Fingerprinting: a survey"
+          text={t('research')}
           href="https://arxiv.org/pdf/1905.01051"
           modifier="link--type-text"
         />

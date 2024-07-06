@@ -24,7 +24,7 @@ As a personal project it also serves the purpose to apply my knowledge about web
 - [ ] Add sections explaining the uses for Browser Fingerprint.
 - [ ] Display statistics.
 - [x] Improve responsiveness
-- [ ] Add multi-language suport
+- [x] Add multi-language suport
 
 ## Portuguese :brazil:
 

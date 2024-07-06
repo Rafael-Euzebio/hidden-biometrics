@@ -4,6 +4,7 @@ import List from '@components/List/List'
 import Collapsible from '@components/Collapsible/Collapsible'
 import '@styles/blocks/user.scss'
 import '@styles/blocks/box.scss'
+import { Trans, useTranslation } from 'react-i18next'
 
 const UserInfo = ({ userInfo }) => {
   const collapsibles = Object.keys(userInfo).map(key => {
@@ -22,19 +23,29 @@ const UserInfo = ({ userInfo }) => {
 
   return (
     <div>
-      <p className="main__description">These are <strong>some</strong> information used to generate that fingerprint:</p>
       <List items={collapsibles} />
     </div>
   )
 }
 const User = ({ fingerprint, userInfo }) => {
+  const { t } = useTranslation()
+
   return (
     <div className="user">
       <div className="box">
-        <p className="box__content">Your Fingerprint:</p>
+        <p className="box__content">{ t('box.upper')}</p>
         <p className="box__content box__content--large" id="fingerprint">{fingerprint}</p>
-        <p className="box__content">Try switching to an anonymous tab or activating a VPN. <br/> It won't change.</p>
+        <p className="box__content">
+          <Trans i18nKey="box.lower">
+            <br/>
+          </Trans>
+        </p>
       </div>
+      <p className="main__description">
+        <Trans i18nKey="main.collapsibles.description">
+          <strong></strong>
+        </Trans>
+    </p>
       <UserInfo userInfo={userInfo}/>
     </div>
   )

@@ -3,8 +3,11 @@ import PropTypes from 'prop-types'
 import '@styles/blocks/collapsible.scss'
 import '@styles/blocks/button.scss'
 import { ArrowDropDown, ArrowRight } from '@mui/icons-material'
+import { useTranslation } from 'react-i18next'
 
 const Collapsible = ({ label, content }) => {
+  const { t } = useTranslation()
+
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleCollapse = () => {
@@ -29,7 +32,7 @@ const Collapsible = ({ label, content }) => {
         onClick={toggleCollapse}
         aria-expanded={isOpen}
         >
-        { arrow } { label }
+        { arrow } {t(`main.collapsibles.${label}`)}
       </button>
       { collapsibleContent }
     </div>

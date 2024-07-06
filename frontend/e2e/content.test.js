@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test'
-import { url, desktopBrowsers, mobileBrowsers } from './constants'
+import { urls, desktopBrowsers, mobileBrowsers } from './constants'
 
 test.beforeEach(async ({ page }) => {
-  await page.goto(url)
+  await page.goto(urls.base)
 })
 
 test.describe('content', () => {

@@ -22,13 +22,20 @@ export default defineConfig({
       '**/e2e/**'],
     coverage: {
       provider: 'istanbul', // or 'v8'
-      exclude: [...coverageConfigDefaults.exclude, '**/main.jsx/**', '**/App.jsx/**', '**/e2e/**', '**/playwright.config.js/**']
+      exclude: [...coverageConfigDefaults.exclude, '**/main.jsx/**', '**/e2e/**', '**/playwright.config.js/**']
+    },
+    onConsoleLog (log, type) {
+      if (type === 'stdout' && !log.includes('vitest debug')) {
+        return false
+      }
     }
+
   },
   resolve: {
     alias: {
       '@styles': `${path.resolve(__dirname, './src/styles')}`,
-      '@components': `${path.resolve(__dirname, './src/components')}`
+      '@components': `${path.resolve(__dirname, './src/components')}`,
+      '@test-helpers': `${path.resolve(__dirname, './src/test-helpers')}`
     }
   }
 })

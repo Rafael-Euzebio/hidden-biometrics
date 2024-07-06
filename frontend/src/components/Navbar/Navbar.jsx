@@ -4,6 +4,7 @@ import { Email, GitHub, LinkedIn } from '@mui/icons-material'
 import Link from '@components/Link/Link'
 import List from '@components/List/List'
 import PropTypes from 'prop-types'
+import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher'
 import '@styles/blocks/navbar.scss'
 
 const Navbar = ({ modifier }) => {
@@ -47,7 +48,7 @@ const Navbar = ({ modifier }) => {
     <nav className={ `navbar ${modifier}` }>
       <List
         modifier="list--horizontal"
-        items={navbarItems}
+        items={[...navbarItems, <NavbarItem component={<LanguageSwitcher />} key="languageSwitcher" />]}
       />
     </nav>
   )
