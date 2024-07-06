@@ -9,7 +9,7 @@ i18n
   .use(LanguageDetector)
   .init({
     detection: {
-      order: ['subdomain', 'navigator']
+      order: ['querystring', 'navigator']
     },
     debug: true,
     fallbackLng: 'en',
