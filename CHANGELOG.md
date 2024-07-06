@@ -4,6 +4,10 @@
 
 ## English :us:
 
+### 2024-07-05
+- Implemented Portuguese language support
+    - Available in `https://pt.hidden-biometrics.on-render.com`
+
 ### 2024-06-26
 - Improved collapsible buttons accessibility.
     - Now screen readers are able to tell if the content is collapsed or not.
@@ -27,6 +31,11 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-07-05
+- Conteúdo disponível em português
+    - Disponível em `https://pt.hidden-biometrics.onrender.com`
+
 - Acessibilidade de botões colapsáveis melhorada.
     - Agora leitores de tela identificam se o conteúdo esta colapsado ou não.
 
