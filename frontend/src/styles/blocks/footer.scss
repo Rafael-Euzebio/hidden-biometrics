@@ -1,0 +1,13 @@
+@use '@styles/globals.scss' as *;
+
+.footer {
+  background-color: $monokai-background;
+  border-top: 2px solid $monokai-selection;
+  line-height: 1.9;
+  @include flex-center(space-between);
+
+  &__content {
+    padding: 1em 0 2em 0;
+    width: 40%;
+  }
+}
