@@ -38,7 +38,7 @@ const Navbar = ({ modifier }) => {
           icon={link.icon}
           label={link.label}
           href={link.href}
-          modifier='link--type-icon'
+          modifier='link--icon link--color-red'
         />
       }
     />

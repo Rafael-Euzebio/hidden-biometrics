@@ -8,8 +8,7 @@
   border: none;
   color: $monokai-text;
   font-size: 1rem;
-  @include transition(color border-color);
-  @include itemFocus();
+  @include itemFocus($monokai-interaction-red);
 
   &:hover {
     background-color: $monokai-highlight;

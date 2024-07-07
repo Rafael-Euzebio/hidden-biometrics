@@ -11,7 +11,7 @@ describe('<Link />', () => {
     text: 'Github',
     label: 'github link',
     href: 'https://github.com',
-    modifier: 'link--type-icon'
+    modifier: 'link--icon'
   }
 
   const invalidProps = {

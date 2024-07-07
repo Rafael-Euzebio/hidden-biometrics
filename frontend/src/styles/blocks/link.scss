@@ -2,19 +2,18 @@
 
 .link {
   color: $monokai-text;
-  @include transition(color border-color);
-  @include itemFocus();
-
-  &--type-text {
+  
+  &--color-red {
+    @include itemFocus($monokai-interaction-red);
     @include underline($monokai-interaction-red);
   }
 
-  &:hover {
-    cursor: pointer;
-    color: $monokai-interaction-red;
+  &--color-purple{
+    @include itemFocus($monokai-accent-purple);
+    @include underline($monokai-accent-purple);
   }
 
-  &--type-icon {
+  &--icon {
     height: 100%;
     width: 100%;
     @include flex-center(space-evenly);

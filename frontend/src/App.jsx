@@ -1,12 +1,13 @@
 import React from 'react'
 import Header from './components/Header/Header'
 import User from '@components/User/User'
+import Link from '@components/Link/Link'
+import Footer from '@components/Footer/Footer'
 import userConfig from './utils/userConfig'
 import '@styles/reset.scss'
 import '@styles/blocks/app.scss'
 import '@styles/blocks/main.scss'
 import '@styles/blocks/header.scss'
-import Link from '@components/Link/Link'
 import { useTranslation } from 'react-i18next'
 
 function App () {
@@ -25,10 +26,11 @@ function App () {
         <Link
           text={t('research')}
           href="https://arxiv.org/pdf/1905.01051"
-          modifier="link--type-text"
+          modifier="link--color-red"
         />
         <User fingerprint={fingerprint} userInfo={userInfo} />
       </main>
+      <Footer />
     </div>
   )
 }
