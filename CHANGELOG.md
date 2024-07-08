@@ -4,6 +4,10 @@
 
 ## English :us:
 
+### 2024-07-08
+- Bugfix: fixed long collapsible contents not being displayed entirely on mobile devices
+- Added footer with additional links.
+
 ### 2024-07-06
 - Bugfix: page does not load when language subdomains are added to the url
     - Replaced subdomains with language querystrings, e.g `https://hiddne-biometrics.onrender.com/?lng=pt`
@@ -34,6 +38,10 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-07-08
+- Correção de bug: conteúdo colapsável não sendo exibido inteiramente em disposítivos mobiles.
+- Adicionado rodapé com links adicionais
 
 ### 2024-07-06
 - correção de bug: página não carrega ao tentar acessar url com subdomínio do idioma
