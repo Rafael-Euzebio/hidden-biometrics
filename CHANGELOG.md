@@ -6,7 +6,7 @@
 
 ### 2024-07-06
 - Bugfix: page does not load when language subdomains are added to the url
-    - Repalces subdomains with language querystrings, e.g `https://hiddne-biometrics.onrender.com/?lng=pt`
+    - Replaced subdomains with language querystrings, e.g `https://hiddne-biometrics.onrender.com/?lng=pt`
 
 ### 2024-07-05
 - Implemented Portuguese language support
