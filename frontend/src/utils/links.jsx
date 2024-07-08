@@ -27,7 +27,7 @@ const links = {
     {
       text: 'Vite',
       label: 'Vite',
-      href: 'https://react.dev/'
+      href: 'https://vitejs.dev/'
     },
     {
       text: 'React',
@@ -37,7 +37,7 @@ const links = {
     {
       text: 'ClientJS',
       label: 'ClientJS',
-      href: 'https://react.dev/'
+      href: 'http://clientjs.org/'
     }
   ]
 }
