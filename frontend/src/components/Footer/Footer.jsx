@@ -10,7 +10,6 @@ const Footer = () => {
     return <Link
       text={link.text}
       href={link.href}
-      label={link.label}
       key={link.href}
       modifier="link--color-purple" />
   })
@@ -19,7 +18,6 @@ const Footer = () => {
     return <Link
       text={contact[obj].text}
       href={contact[obj].href}
-      label={contact[obj].label}
       key={contact[obj].href}
       modifier="link--color-purple" />
   })
