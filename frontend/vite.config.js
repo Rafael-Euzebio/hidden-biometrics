@@ -35,7 +35,8 @@ export default defineConfig({
     alias: {
       '@styles': `${path.resolve(__dirname, './src/styles')}`,
       '@components': `${path.resolve(__dirname, './src/components')}`,
-      '@test-helpers': `${path.resolve(__dirname, './src/test-helpers')}`
+      '@test-helpers': `${path.resolve(__dirname, './src/test-helpers')}`,
+      '@utils': `${path.resolve(__dirname, './src/utils')}`
     }
   }
 })

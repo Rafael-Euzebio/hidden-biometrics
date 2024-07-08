@@ -1,40 +1,20 @@
 import React from 'react'
 import NavbarItem from './NavbarItem'
-import { Email, GitHub, LinkedIn } from '@mui/icons-material'
 import Link from '@components/Link/Link'
 import List from '@components/List/List'
 import PropTypes from 'prop-types'
 import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher'
+import links from '@utils/links'
 import '@styles/blocks/navbar.scss'
 
 const Navbar = ({ modifier }) => {
-  const links = [
-    {
-      text: '',
-      icon: <GitHub />,
-      label: 'Github',
-      href: 'https://github.com/Rafael-Euzebio/hidden-biometrics'
-    },
-    {
-      text: '',
-      icon: <LinkedIn />,
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/rafael-euzebio/'
-    },
-    {
-      text: '',
-      icon: <Email />,
-      label: 'Email',
-      href: 'mailto:rafaeleuzebiomendes@protonmail.com'
-    }
-  ]
+  const { contact } = links
 
-  const navbarItems = links.map((link, index) => (
+  const navbarLinks = contact.map((link) => (
     <NavbarItem
-      key={index}
+      key={link.href}
       component={
         <Link
-          text={link.text}
           icon={link.icon}
           label={link.label}
           href={link.href}
@@ -48,7 +28,7 @@ const Navbar = ({ modifier }) => {
     <nav className={ `navbar ${modifier}` }>
       <List
         modifier="list--horizontal"
-        items={[...navbarItems, <NavbarItem component={<LanguageSwitcher />} key="languageSwitcher" />]}
+        items={[...navbarLinks, <NavbarItem component={<LanguageSwitcher />} key="languageSwitcher" />]}
       />
     </nav>
   )

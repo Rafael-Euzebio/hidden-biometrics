@@ -1,60 +1,26 @@
 import React from 'react'
 import Link from '@components/Link/Link'
 import List from '@components/List/List'
+import links from '@utils/links'
 import '@styles/blocks/footer.scss'
 
 const Footer = () => {
-  const techStack = [
-    {
-      text: 'Vite',
-      label: 'Vite',
-      href: 'https://react.dev/'
-    },
-    {
-      text: 'React',
-      label: 'React',
-      href: 'https://react.dev/'
-    },
-    {
-      text: 'ClientJS',
-      label: 'ClientJS',
-      href: 'https://react.dev/'
-    }
-  ]
-
-  const contact = [
-    {
-      text: 'Github',
-      label: 'Github',
-      href: 'https://github.com/Rafael-Euzebio/hidden-biometrics'
-    },
-    {
-      text: 'LinkedIn',
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/rafael-euzebio/'
-    },
-    {
-      text: 'Email',
-      label: 'Email',
-      href: 'mailto:rafaeleuzebiomendes@protonmail.com'
-    }
-  ]
-
-  const techStackLinks = techStack.map((obj) => {
+  const { contact, techstack } = links
+  const techStackLinks = techstack.map((link) => {
     return <Link
-      text={obj.text}
-      href={obj.href}
-      label={obj.label}
-      key={obj.href}
+      text={link.text}
+      href={link.href}
+      label={link.label}
+      key={link.href}
       modifier="link--color-purple" />
   })
 
-  const contactLinks = contact.map((obj) => {
+  const contactLinks = Object.keys(contact).map((obj) => {
     return <Link
-      text={obj.text}
-      href={obj.href}
-      label={obj.label}
-      key={obj.href}
+      text={contact[obj].text}
+      href={contact[obj].href}
+      label={contact[obj].label}
+      key={contact[obj].href}
       modifier="link--color-purple" />
   })
 
