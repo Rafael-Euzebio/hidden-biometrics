@@ -43,7 +43,7 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
 - [ ] Adicionar sessões sobre os diferentes usos de Impressão Digital de Browser.
 - [ ] Exibir estatísticas.
 - [x] Melhore a responsividade.
-- [ ] Adicionar suporte para múltiplos idiomas
+- [x] Adicionar suporte para múltiplos idiomas
 
 
 ## Tech Stack
