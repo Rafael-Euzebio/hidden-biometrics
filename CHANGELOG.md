@@ -5,6 +5,9 @@
 ## English :us:
 
 ### 2024-07-08
+- Bugfix: fixed footer links not leading to their respective websites.
+
+### 2024-07-08
 - Bugfix: fixed long collapsible contents not being displayed entirely on mobile devices
 - Added footer with additional links.
 
@@ -38,6 +41,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-07-08
+- Bugfix: fixed footer links not leading to their respective websites.
 
 ### 2024-07-08
 - Correção de bug: conteúdo colapsável não sendo exibido inteiramente em disposítivos mobiles.
