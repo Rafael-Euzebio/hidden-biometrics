@@ -7,10 +7,10 @@ const initialUser = {
   browser: 'Firefox',
   ip: '192.168.256.1',
 }
-const initializeDB = () => {
+const initializeDB = async () => {
   const user = new User(initialUser)
 
-  user.save()
+  await user.save()
 }
 
 module.exports = { initializeDB, initialUser }

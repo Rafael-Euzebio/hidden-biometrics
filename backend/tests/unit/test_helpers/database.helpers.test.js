@@ -7,12 +7,12 @@ const assert = require('node:assert/strict')
 
 
 describe('database helpers', () => {
-  beforeEach(() => {
-    connectDB()
+  beforeEach(async () => {
+    await connectDB()
   })
 
   it('should find inserted user in database', async () => {
-    initializeDB()
+    await initializeDB()
     const insertedUser = await User.findOne({ 
       fingerprint: initialUser.fingerprint 
     })
@@ -20,7 +20,7 @@ describe('database helpers', () => {
     assert.equal(insertedUser.fingerprint, initialUser.fingerprint)
   })
 
-  afterEach(() => {
-    disconnectDB()
+  afterEach(async () => {
+    await disconnectDB()
   })
 })
