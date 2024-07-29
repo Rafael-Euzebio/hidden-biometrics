@@ -7,10 +7,10 @@ const initialUser = {
   browser: 'Firefox',
   ip: '192.168.256.1',
 }
-const insertInitialUser = () => {
+const initializeDB = () => {
   const user = new User(initialUser)
 
   user.save()
 }
 
-module.exports = { insertInitialUser, initialUser }
+module.exports = { initializeDB, initialUser }
