@@ -11,6 +11,10 @@ describe('database helpers', () => {
     await connectDB()
   })
 
+  afterEach(async () => {
+    await disconnectDB()
+  })
+
   it('should find inserted user in database', async () => {
     await initializeDB()
     const insertedUser = await User.findOne({ 
@@ -20,7 +24,4 @@ describe('database helpers', () => {
     assert.equal(insertedUser.fingerprint, initialUser.fingerprint)
   })
 
-  afterEach(async () => {
-    await disconnectDB()
-  })
 })
