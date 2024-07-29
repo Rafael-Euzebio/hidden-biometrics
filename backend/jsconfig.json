@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@models/*": ["models/*"],
-      "@config/*": ["config/*"]
+      "@config/*": ["config/*"],
       "@tests/*": ["tests/*"]
     }
   }
