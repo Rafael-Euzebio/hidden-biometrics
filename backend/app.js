@@ -22,6 +22,23 @@ app.get('/api/users/:fingerprint', async (req, res) => {
   }
 })
 
+app.post('/api/users', async (req, res) => {
+  const { fingerprint, os, browser, ip } = req.body
+
+  if (!fingerprint || !os || !browser || !ip) {
+    return res.status(400).json({ error: "Missing required fields" }).end()
+  }
+  const user = new User(req.body)
+
+  let result 
+  try {
+    result = await user.save()
+  } catch(error) {
+    return res.status(500).json({ error: error }).end()
+  }
+
+  return res.status(201).json(result).end()
+})
 const server = app.listen(port, () => {
   console.log(`Running on port ${port}`)
 })
