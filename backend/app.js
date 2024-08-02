@@ -16,7 +16,7 @@ app.get('/api/users/:fingerprint', async (req, res) => {
   const fingerprint = req.params.fingerprint
   const user = await User.findOne({ fingerprint })
   if (user) {
-    return res.json({ user }).status(200).end()
+    return res.status(200).json(user).end()
   } else {
     return res.status(404).end()
   }

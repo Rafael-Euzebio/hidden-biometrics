@@ -22,7 +22,7 @@ describe('Users route', () => {
     it('should return user and 200 when user is in database', async () => {
       await initializeDB()
       const res = await request.get(`/api/users/${initialUser.fingerprint}`)
-      const { user } = res.body
+      const user = res.body
 
       assert.equal(user.fingerprint, initialUser.fingerprint)
       assert.equal(res.status, 200)
