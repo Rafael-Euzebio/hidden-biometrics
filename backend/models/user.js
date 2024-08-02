@@ -15,8 +15,7 @@ const userSchema = new Schema({
     required: true
   },
   ip: {
-    type: String,
-    required: true
+    type: String
   },
 })
 

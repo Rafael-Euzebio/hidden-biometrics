@@ -23,12 +23,13 @@ app.get('/api/users/:fingerprint', async (req, res) => {
 })
 
 app.post('/api/users', async (req, res) => {
-  const { fingerprint, os, browser, ip } = req.body
+  const { fingerprint, os, browser } = req.body
+  const ip = req.socket.remoteAddress
 
-  if (!fingerprint || !os || !browser || !ip) {
+  if (!fingerprint || !os || !browser) {
     return res.status(400).json({ error: "Missing required fields" }).end()
   }
-  const user = new User(req.body)
+  const user = new User({ ...req.body, ip })
 
   let result 
   try {
