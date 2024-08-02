@@ -3,9 +3,9 @@ const supertest = require('supertest')
 const { app, server } = require('../../app')
 const request = supertest(app)
 const { connectDB, disconnectDB } = require('@config/db.js')
-const { initializeDB, initialUser } = require('@tests/test_helpers/database.helpers.js')
 const { it, describe, beforeEach, afterEach } = require('node:test')
 const assert = require('node:assert/strict')
+const { initializeDB, initialUser, invalidUser} = require('@tests/test_helpers/database.helpers.js')
 
 
 describe('Users route', () => {
@@ -34,4 +34,21 @@ describe('Users route', () => {
     })
   })
 
+  describe('POST', () => {
+    it('should return user and 201 when user is successfully created', async () => {
+      const res = await request.post(`/api/users`).send(initialUser)
+      assert.equal(res.status, 201)
+      const  result = res.body
+      assert.ok(result['_id'])
+      for (const field in initialUser) {
+        assert.equal(result[field], initialUser[field])
+      }
+    })
+
+    it('should return 400 and an error if required fields are not present', async () => {
+      const res = await request.post(`/api/users`).send(invalidUser)
+      assert.equal(res.status, 400)
+      assert.ok(res.body.error)
+    })
+  })
 })
