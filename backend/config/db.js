@@ -10,7 +10,7 @@ const connectDB = async () => {
     try {
       let dbURL = process.env.MONGODB_URL
 
-      if (process.env.NODE_ENV === 'test') {
+      if (process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'dev') {
         mockDB = await MongoMemoryServer.create({
           binary: {
             version: '4.4.17'

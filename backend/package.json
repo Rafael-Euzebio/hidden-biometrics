@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "NODE_ENV=test node --test",
-    "dev": "nodemon app.js",
+    "dev": "NODE_ENV=dev nodemon app.js",
     "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
     "deploy": "if [ $(git rev-parse --abbrev-ref HEAD) = 'master' ]; then npm run build:ui && git add . && git commit -m 'deploy' && git push -u origin master --tags; else echo 'Current branch is not master. Script not executed.'; fi"
   },
