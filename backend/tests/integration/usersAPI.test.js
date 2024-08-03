@@ -38,10 +38,10 @@ describe('Users route', () => {
     it('should return user and 201 when user is successfully created', async () => {
       const res = await request.post(`/api/users`).send(initialUser)
       assert.equal(res.status, 201)
-      const  result = res.body
-      assert.ok(result['_id'])
+      const  user = res.body
+      assert.ok(user['_id'])
       for (const field in initialUser) {
-        assert.equal(result[field], initialUser[field])
+        assert.equal(user[field], initialUser[field])
       }
     })
 
