@@ -28,7 +28,7 @@ describe('Users route', () => {
       assert.equal(res.status, 200)
     })
 
-    it('should return 404 when the user is not in the database', async () => {
+    it('should return 404 when user is not in the database', async () => {
       const res = await request.get(`/api/users/${initialUser.fingerprint}`)
       assert.equal(res.status, 404)
     })
@@ -45,7 +45,7 @@ describe('Users route', () => {
       }
     })
 
-    it('should return 400 and an error if required fields are not present', async () => {
+    it('should return 400 and an error when required fields are not present', async () => {
       const res = await request.post(`/api/users`).send(invalidUser)
       assert.equal(res.status, 400)
       assert.ok(res.body.error)
