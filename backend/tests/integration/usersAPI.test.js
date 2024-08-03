@@ -19,49 +19,58 @@ describe('Users route', () => {
   })
 
   describe('GET', () => {
-    it('should return user and 200 when user is in database', async () => {
-      await initializeDB()
-      const res = await request.get(`/api/users/${initialUser.fingerprint}`)
-      const user = res.body
+    describe('Success', () => {
+      it('should return user and 200 when user is in database', async () => {
+        await initializeDB()
+        const res = await request.get(`/api/users/${initialUser.fingerprint}`)
+        const user = res.body
 
-      assert.equal(user.fingerprint, initialUser.fingerprint)
-      assert.equal(res.status, 200)
+        assert.equal(user.fingerprint, initialUser.fingerprint)
+        assert.equal(res.status, 200)
+      })
+
     })
 
-    it('should return 404 when user is not in the database', async () => {
-      const res = await request.get(`/api/users/${initialUser.fingerprint}`)
-      assert.equal(res.status, 404)
+    describe('Client Error', () => {
+      it('should return 404 when user is not in the database', async () => {
+        const res = await request.get(`/api/users/${initialUser.fingerprint}`)
+        assert.equal(res.status, 404)
+      })
     })
   })
 
   describe('POST', () => {
-    it('should return user and 201 when user is successfully created', async () => {
-      const res = await request.post(`/api/users`).send(initialUser)
-      assert.equal(res.status, 201)
-      const  user = res.body
-      assert.ok(user['_id'])
-      for (const field in initialUser) {
-        assert.equal(user[field], initialUser[field])
-      }
+    describe('Success', () => {
+      it('should return user and 201 when user is successfully created', async () => {
+        const res = await request.post(`/api/users`).send(initialUser)
+        assert.equal(res.status, 201)
+        const  user = res.body
+        assert.ok(user['_id'])
+        for (const field in initialUser) {
+          assert.equal(user[field], initialUser[field])
+        }
+      })
+
+      it('should return access count of 1 when user is created', async () => {
+        const res = await request.post(`/api/users`).send(initialUser)
+        const user = res.body
+        assert.equal(user.accessCount, 1)
+      })
     })
 
-    it('should return access count of 1 when user is created', async () => {
-      const res = await request.post(`/api/users`).send(initialUser)
-      const user = res.body
-      assert.equal(user.accessCount, 1)
-    })
+    describe('Client error', () => {
+      it('should return 400 and an error when required fields are not present', async () => {
+        const res = await request.post(`/api/users`).send(invalidUser)
+        assert.equal(res.status, 400)
+        assert.ok(res.body.error)
+      })
 
-    it('should return 400 and an error when required fields are not present', async () => {
-      const res = await request.post(`/api/users`).send(invalidUser)
-      assert.equal(res.status, 400)
-      assert.ok(res.body.error)
-    })
-
-    it('should return 409 and an error when fingerprint already exists in the database', async () => {
-      await initializeDB()
-      const res = await request.post(`/api/users`).send(initialUser)
-      assert.equal(res.status, 409)
-      assert.ok(res.body.error)
+      it('should return 409 and an error when fingerprint already exists in the database', async () => {
+        await initializeDB()
+        const res = await request.post(`/api/users`).send(initialUser)
+        assert.equal(res.status, 409)
+        assert.ok(res.body.error)
+      })
     })
   })
 })
