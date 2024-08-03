@@ -25,6 +25,11 @@ const userSchema = new Schema({
   ip: {
     type: String
   },
+  accessCount: {
+    type: Number,
+    required: true,
+    default: 1
+  }
 })
 
 const User = mongoose.model('User', userSchema)
