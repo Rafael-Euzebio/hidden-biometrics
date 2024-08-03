@@ -4,7 +4,7 @@
   "description": "backend for hidden-biometrics.",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "NODE_ENV=production node app.js",
     "test": "NODE_ENV=test node --test",
     "dev": "NODE_ENV=dev nodemon app.js",
     "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",

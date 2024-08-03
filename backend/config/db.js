@@ -19,9 +19,11 @@ const connectDB = async () => {
         dbURL = mockDB.getUri()
       }
 
-      const connection = mongoose.connect(dbURL)
+      const connection = await mongoose.connect(dbURL)
 
-      console.log(`MongoDB connected: ${(await connection).connection.host}`)
+      if (process.env.NODE_ENV !== 'test') {
+        console.log(`MongoDB connected: ${(connection).connection.host}`)
+      }
     } catch(error) {
       console.error(error)
     }
