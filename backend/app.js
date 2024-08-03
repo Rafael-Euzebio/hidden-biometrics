@@ -36,7 +36,7 @@ app.post('/api/users', async (req, res) => {
     result = await user.save()
   } catch(error) {
     if (error.name === 'ValidationError') {
-      return res.status(409).json(error).end()
+      return res.status(409).json({error: error}).end()
     }
     return res.status(500).json({ error: error }).end()
   }
