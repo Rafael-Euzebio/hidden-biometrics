@@ -52,7 +52,7 @@ describe('Users route', () => {
     })
 
     it('should return 409 and an error when fingerprint already exists in the database', async () => {
-      initializeDB()
+      await initializeDB()
       const res = await request.post(`/api/users`).send(initialUser)
       assert.equal(res.status, 409)
       assert.ok(res.body.error)
