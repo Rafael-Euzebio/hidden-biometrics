@@ -4,7 +4,15 @@ const { Schema } = mongoose
 const userSchema = new Schema({
   fingerprint: {
     type: String,
-    required: true
+    required: true,
+    validate: {
+      validator: async function(v) {
+        const user = await User.findOne({ fingerprint: v })
+        
+        return !user
+      },
+      message: 'User already exists'
+    }
   },
   os: {
     type: String,
