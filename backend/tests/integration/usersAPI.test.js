@@ -45,6 +45,12 @@ describe('Users route', () => {
       }
     })
 
+    it('should return access count of 1 when user is created', async () => {
+      const res = await request.post(`/api/users`).send(initialUser)
+      const user = res.body
+      assert.equal(user.accessCount, 1)
+    })
+
     it('should return 400 and an error when required fields are not present', async () => {
       const res = await request.post(`/api/users`).send(invalidUser)
       assert.equal(res.status, 400)
