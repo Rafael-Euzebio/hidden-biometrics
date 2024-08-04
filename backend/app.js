@@ -44,6 +44,20 @@ app.post('/api/users', async (req, res) => {
   return res.status(201).json(result)
 })
 
+app.patch('/api/users/:fingerprint', async (req, res) => {
+  const fingerprint = req.params.fingerprint
+
+  try {
+    const user = await User.findOneAndUpdate({ fingerprint }, {$inc: { accessCount: 1 }}, { new: true })
+    if (!user) {
+      return res.status(404).end()
+    }
+    return res.status(200).json(user)
+  } catch (error) {
+    return res.status(400).send({ error })
+  }
+})
+
 const server = app.listen(port, () => {
   console.log(`Running on port ${port}`)
 })
