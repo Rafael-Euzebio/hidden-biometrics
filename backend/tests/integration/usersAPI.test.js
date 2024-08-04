@@ -5,7 +5,7 @@ const request = supertest(app)
 const { connectDB, disconnectDB } = require('@config/db.js')
 const { it, describe, beforeEach, afterEach } = require('node:test')
 const assert = require('node:assert/strict')
-const { initializeDB, initialUser, invalidUser} = require('@tests/test_helpers/database.helpers.js')
+const { initializeDB, validUser, invalidUser} = require('@tests/test_helpers/database.helpers.js')
 
 
 describe('Users route', () => {
@@ -22,10 +22,10 @@ describe('Users route', () => {
     describe('Success', () => {
       it('should return user and 200 when user is in database', async () => {
         await initializeDB()
-        const res = await request.get(`/api/users/${initialUser.fingerprint}`)
+        const res = await request.get(`/api/users/${validUser.fingerprint}`)
         const user = res.body
 
-        assert.equal(user.fingerprint, initialUser.fingerprint)
+        assert.equal(user.fingerprint, validUser.fingerprint)
         assert.equal(res.status, 200)
       })
 
@@ -33,7 +33,7 @@ describe('Users route', () => {
 
     describe('Client Error', () => {
       it('should return 404 when user is not in the database', async () => {
-        const res = await request.get(`/api/users/${initialUser.fingerprint}`)
+        const res = await request.get(`/api/users/${validUser.fingerprint}`)
         assert.equal(res.status, 404)
       })
     })
@@ -42,17 +42,17 @@ describe('Users route', () => {
   describe('POST', () => {
     describe('Success', () => {
       it('should return user and 201 when user is successfully created', async () => {
-        const res = await request.post(`/api/users`).send(initialUser)
+        const res = await request.post(`/api/users`).send(validUser)
         assert.equal(res.status, 201)
         const  user = res.body
         assert.ok(user['_id'])
-        for (const field in initialUser) {
-          assert.equal(user[field], initialUser[field])
+        for (const field in validUser) {
+          assert.equal(user[field], validUser[field])
         }
       })
 
       it('should return access count of 1 when user is created', async () => {
-        const res = await request.post(`/api/users`).send(initialUser)
+        const res = await request.post(`/api/users`).send(validUser)
         const user = res.body
         assert.equal(user.accessCount, 1)
       })
@@ -67,10 +67,13 @@ describe('Users route', () => {
 
       it('should return 409 and an error when fingerprint already exists in the database', async () => {
         await initializeDB()
-        const res = await request.post(`/api/users`).send(initialUser)
+        const res = await request.post(`/api/users`).send(validUser)
         assert.equal(res.status, 409)
         assert.ok(res.body.error)
       })
     })
+  })
+
+  describe('PUT', () => {
   })
 })
