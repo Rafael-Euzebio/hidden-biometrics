@@ -85,5 +85,11 @@ describe('Users route', () => {
       })
     })
 
+    describe('Client Error', () => {
+      it('should return 404 when user is not in database', async () => {
+        const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
+        assert.equal(res.status, 404)
+      })
+    })
   })
 })
