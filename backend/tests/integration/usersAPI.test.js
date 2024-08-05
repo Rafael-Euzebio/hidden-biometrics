@@ -5,7 +5,7 @@ const request = supertest(app)
 const { connectDB, disconnectDB } = require('@config/db.js')
 const { it, describe, beforeEach, afterEach } = require('node:test')
 const assert = require('node:assert/strict')
-const { initializeDB, validUser, invalidUser} = require('@tests/test_helpers/database.helpers.js')
+const { initializeDB, initialUser, validUser, invalidUser } = require('@tests/test_helpers/database.helpers.js')
 
 
 describe('Users route', () => {
@@ -74,6 +74,16 @@ describe('Users route', () => {
     })
   })
 
-  describe('PUT', () => {
+  describe('PATCH', () => {
+    describe('Success', () => {
+      it('should return 200 user with access count increased by one when user exists in the database', async () => {
+        await initializeDB()
+        const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
+        const user = res.body
+        assert.equal(res.status, 200)
+        assert.equal(user.accessCount, initialUser.accessCount + 1)
+      })
+    })
+
   })
 })
