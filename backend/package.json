@@ -37,6 +37,7 @@
   "_moduleAliases": {
     "@config": "./config",
     "@models": "./models",
-    "@tests": "./tests"
+    "@tests": "./tests",
+    "@middlewares": "./middlewares"
   }
 }

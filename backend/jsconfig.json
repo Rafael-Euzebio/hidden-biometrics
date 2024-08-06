@@ -4,7 +4,8 @@
     "paths": {
       "@models/*": ["models/*"],
       "@config/*": ["config/*"],
-      "@tests/*": ["tests/*"]
+      "@tests/*": ["tests/*"],
+      "@middlewares/*": ["middlewares/*"]
     }
   }
 }
