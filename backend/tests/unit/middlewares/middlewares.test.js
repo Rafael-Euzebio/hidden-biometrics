@@ -41,13 +41,13 @@ describe('standardResponse middleware', () => {
 
     it('should not send errors', () => {
       const body = JSON.parse(res._getData())
-      assert.equal(body.errors, null)
+      assert.equal(body.error, null)
     }) 
   })
 
   describe('when response fails', () => {
     beforeEach(() => {
-      res.standardResponse(400, 'Error', null, ['error1', 'error2'])
+      res.standardResponse(400, 'Error', null, 'mockError')
     })
 
     it('should send 400 status code', () => {
@@ -56,12 +56,9 @@ describe('standardResponse middleware', () => {
     })
 
     it('should send errors array in body', () => {
-      const expectedErrors = ['error1', 'error2']
-      const { errors }= JSON.parse(res._getData())
+      const { error } = JSON.parse(res._getData())
 
-      for (const index in expectedErrors) {
-        assert.equal(errors[index], expectedErrors[index])
-      }
+      assert.equal(error, 'mockError')
     })
   })
 })
