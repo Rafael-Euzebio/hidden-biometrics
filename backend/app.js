@@ -6,9 +6,11 @@ const port = process.env.NODE_ENV === "test" ?
   process.env.TEST_PORT : process.env.PORT
 const { connectDB } = require('@config/db')
 const User = require('@models/user')
+const { standardResponse } = require('@middlewares/middlewares')
 
 app.use(express.static('dist'))
 app.use(express.json())
+app.use(standardResponse)
 
 connectDB()
 
@@ -16,9 +18,9 @@ app.get('/api/users/:fingerprint', async (req, res) => {
   const fingerprint = req.params.fingerprint
   const user = await User.findOne({ fingerprint })
   if (user) {
-    return res.status(200).json(user)
+    return res.standardResponse(200, 'Success', user)
   } else {
-    return res.status(404).end()
+    return res.standardResponse(404, 'Error', null, 'User not found')
   }
 })
 
@@ -27,7 +29,7 @@ app.post('/api/users', async (req, res) => {
   const ip = req.socket.remoteAddress
 
   if (!fingerprint || !os || !browser) {
-    return res.status(400).json({ error: "Missing required fields" })
+    return res.standardResponse(400, 'Error', null, 'Missing required fields')
   }
   const user = new User({ ...req.body, ip })
 
@@ -36,12 +38,12 @@ app.post('/api/users', async (req, res) => {
     result = await user.save()
   } catch(error) {
     if (error.name === 'ValidationError') {
-      return res.status(409).json({error: error})
+      return res.standardResponse(409, 'Error', null, error.message)
     }
-    return res.status(500).json({ error: error })
+    return res.standardResponse(500, 'Error', null, error.message)
   }
 
-  return res.status(201).json(result)
+  return res.standardResponse(201, 'Success', result)
 })
 
 app.patch('/api/users/:fingerprint', async (req, res) => {
@@ -50,11 +52,11 @@ app.patch('/api/users/:fingerprint', async (req, res) => {
   try {
     const user = await User.findOneAndUpdate({ fingerprint }, {$inc: { accessCount: 1 }}, { new: true })
     if (!user) {
-      return res.status(404).end()
+      return res.standardResponse(404, 'Error', null, 'User not found')
     }
-    return res.status(200).json(user)
+    return res.standardResponse(200, 'Success', user)
   } catch (error) {
-    return res.status(400).send({ error })
+    return res.standardResponse(400, 'Error', null, error.message)
   }
 })
 
