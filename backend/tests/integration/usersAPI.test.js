@@ -165,12 +165,25 @@ describe('Users route', () => {
 
   describe('DELETE', () => {
     describe('Success', () => {
-      it('should send 200 and user data when user is in the database', async () => {
+      let res
+      beforeEach(async () => {
         initializeDB()
-        const res = await request.delete(`/api/users/${initialUser.fingerprint}`)
-        const { data } = res.body
-        assert.equal(res.status, 200)
-        assert.equal(data.fingerprint, initialUser.fingerprint)
+        res = await request.delete(`/api/users/${initialUser.fingerprint}`)
+      })
+
+      describe('Route', () => {
+        it('should send 200 and user data when user is in the database', async () => {
+          const { data } = res.body
+          assert.equal(res.status, 200)
+          assert.equal(data.fingerprint, initialUser.fingerprint)
+        })
+      })
+
+      describe('Database', () => {
+        it('should not find user in database after deletion request', async () => {
+          const userInDB = await User.findOne({ fingerprint: initialUser.fingerprint })      
+          assert.equal(userInDB, null)
+        })
       })
     })
 
