@@ -60,6 +60,16 @@ app.patch('/api/users/:fingerprint', async (req, res) => {
   }
 })
 
+app.delete('/api/users/:fingerprint', async (req, res) => {
+  const fingerprint = req.params.fingerprint
+  const result = await User.findOneAndDelete({ fingerprint })
+  if (!result) {
+    return res.standardResponse(404, 'Error', null, 'User not found')
+  }
+
+  return res.standardResponse(200, 'Success', result)
+})
+
 const server = app.listen(port, () => {
   console.log(`Running on port ${port}`)
 })
