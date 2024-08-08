@@ -96,4 +96,23 @@ describe('Users route', () => {
       })
     })
   })
+
+  describe('DELETE', () => {
+    describe('Success', () => {
+      it('should send 200 and user data when user is in the database', async () => {
+        initializeDB()
+        const res = await request.delete(`/api/users/${initialUser.fingerprint}`)
+        const { data } = res.body
+        assert.equal(res.status, 200)
+        assert.equal(data.fingerprint, initialUser.fingerprint)
+      })
+    })
+
+    describe('Client Error', () => {
+      it('should send 404 when user is not in the database', async () => {
+        const res = await request.delete(`/api/users/${initialUser.fingerprint}`)
+        assert.equal(res.status, 404)
+      }) 
+    })
+  })
 })
