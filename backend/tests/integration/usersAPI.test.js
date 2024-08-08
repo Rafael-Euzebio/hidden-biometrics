@@ -125,19 +125,40 @@ describe('Users route', () => {
 
   describe('PATCH', () => {
     describe('Success', () => {
-      it('should return 200 and user with access count increased by one when user exists in the database', async () => {
-        await initializeDB()
-        const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
-        const { data } = res.body
-        assert.equal(res.status, 200)
-        assert.equal(data.accessCount, initialUser.accessCount + 1)
+      describe('Routes', () => {
+        it('should return 200 and user with access count increased by one when user exists in the database', async () => {
+          await initializeDB()
+          const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
+          const { data } = res.body
+          assert.equal(res.status, 200)
+          assert.equal(data.accessCount, initialUser.accessCount + 1)
+        })
+      })
+
+      describe('Database', () => {
+        it('should find user in database with increased access count', async () => {
+          await initializeDB()
+          await request.patch(`/api/users/${initialUser.fingerprint}`)
+          const userInDB = await User.findOne({ fingerprint: initialUser.fingerprint })
+          assert.equal(userInDB.accessCount, 2)
+        })
       })
     })
 
     describe('Client Error', () => {
-      it('should return 404 when user is not in database', async () => {
-        const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
-        assert.equal(res.status, 404)
+      describe('Route', () => {
+        it('should return 404 when user is not in database', async () => {
+          const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
+          assert.equal(res.status, 404)
+        })
+      })
+
+      describe('Database', () => {
+        it('should not insert in the database when user is not present', async () => {
+          await request.patch(`/api/users/${initialUser.fingerprint}`)
+          const userInDB = await User.findOne({ fingerprint: initialUser.fingerprint })
+          assert.equal(userInDB, null)
+        })
       })
     })
   })
