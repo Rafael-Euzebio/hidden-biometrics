@@ -6,7 +6,7 @@ const port = process.env.NODE_ENV === "test" ?
   process.env.TEST_PORT : process.env.PORT
 const { connectDB } = require('@config/db')
 const User = require('@models/user')
-const { standardResponse } = require('@middlewares/middlewares')
+const { standardResponse } = require('@middlewares/standardResponse')
 
 app.use(express.static('dist'))
 app.use(express.json())

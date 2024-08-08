@@ -1,5 +1,5 @@
 require('module-alias/register')
-const { standardResponse } = require('@middlewares/middlewares')
+const { standardResponse } = require('@middlewares/standardResponse')
 const { mock, it, describe, beforeEach, afterEach } = require('node:test')
 const httpMocks = require('node-mocks-http')
 const assert = require('node:assert/strict')
