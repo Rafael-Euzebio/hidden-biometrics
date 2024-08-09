@@ -14,6 +14,16 @@ app.use(standardResponse)
 
 connectDB()
 
+app.get('/api/users', async (req, res) => {
+  let users 
+  try {
+    users = await User.find({})
+  } catch(error) {
+    return res.standardResponse(500, 'Error', null, error.message)
+  }
+    return res.standardResponse(200, 'Success', users)
+})
+
 app.get('/api/users/:fingerprint', async (req, res) => {
   const fingerprint = req.params.fingerprint
   const user = await User.findOne({ fingerprint })
