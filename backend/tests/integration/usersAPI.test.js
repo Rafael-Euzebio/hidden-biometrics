@@ -22,8 +22,18 @@ describe('Users route', () => {
   describe('GET', () => {
     describe('Success', () => {
       describe('Route', () => {
-        it('should return user and 200 when user is in database', async () => {
+        beforeEach(async () => {
           await initializeDB()
+        })
+
+        it('should return 200 and all users when a blank request is sent', async () => {
+          const res = await request.get(`/api/users/${validUser.fingerprint}`)
+          const { data } = res.body
+
+          assert.equal(data.fingerprint, validUser.fingerprint)
+          assert.equal(res.status, 200)
+        })
+        it('should return user and 200 when user is in database', async () => {
           const res = await request.get(`/api/users/${validUser.fingerprint}`)
           const { data } = res.body
 
