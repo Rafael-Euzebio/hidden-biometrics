@@ -36,7 +36,7 @@ describe('standardResponse middleware', () => {
       const body = JSON.parse(res._getData())
       assert.ok(body)
       assert.equal(body.message, 'Success')
-      assert.equal(body.data, 'mockData')
+      assert.equal(body.payload, 'mockData')
     }) 
 
     it('should not send errors', () => {

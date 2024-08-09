@@ -1,8 +1,8 @@
 function standardResponse(req, res, next) {
-  res.standardResponse = (status, message, data=null, error=null) => {
+  res.standardResponse = (status, message, payload=null, error=null) => {
     res.status(status).json({
       message,
-      data,
+      payload,
       error
     })
   }
