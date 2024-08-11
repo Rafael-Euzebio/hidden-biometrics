@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './components/Header/Header'
 import User from '@components/User/User'
 import Link from '@components/Link/Link'
@@ -9,11 +9,34 @@ import '@styles/blocks/app.scss'
 import '@styles/blocks/main.scss'
 import '@styles/blocks/header.scss'
 import { useTranslation } from 'react-i18next'
+import requests from '@utils/apiDataFetcher'
 
 function App () {
   const { fingerprint, userInfo } = userConfig
-
   const { t } = useTranslation()
+  const [user, setuser] = useState({})
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await requests.getOne(fingerprint)
+        const { payload } = await requests.updateOne(fingerprint)
+        setuser(payload)
+      } catch (error) {
+        if (error.response.status === 404) {
+          try {
+            const { payload } = await requests.insertOne(fingerprint, userInfo.browser.value, userInfo.os.value)
+            setuser(payload)
+          } catch (postError) {
+            console.log(postError.message)
+          }
+        } else {
+          console.log('Failed to fetch user', error.response.data)
+        }
+      }
+    })()
+  }, [])
+  console.log(user)
 
   return (
     <div className="app">
