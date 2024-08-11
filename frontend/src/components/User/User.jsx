@@ -6,18 +6,18 @@ import '@styles/blocks/user.scss'
 import '@styles/blocks/box.scss'
 import { Trans, useTranslation } from 'react-i18next'
 
-const UserInfo = ({ userInfo }) => {
-  const collapsibles = Object.keys(userInfo).map(key => {
-    if (userInfo[key].value !== undefined) {
+const UserInfo = ({ deviceInfo }) => {
+  const collapsibles = Object.keys(deviceInfo).map(key => {
+    if (deviceInfo[key].value !== undefined) {
       return (
       <Collapsible
-        label={userInfo[key].text}
-        content={userInfo[key].value}
-        key={userInfo[key].text}
+        label={deviceInfo[key].text}
+        content={deviceInfo[key].value}
+        key={deviceInfo[key].text}
       />
       )
     }
-    return <div data-testid="empty-div" key={userInfo[key].text}></div>
+    return <div data-testid="empty-div" key={deviceInfo[key].text}></div>
   }
   )
 
@@ -27,14 +27,14 @@ const UserInfo = ({ userInfo }) => {
     </div>
   )
 }
-const User = ({ fingerprint, userInfo }) => {
+const User = ({ user }) => {
   const { t } = useTranslation()
 
   return (
     <div className="user">
       <div className="box">
         <p className="box__content">{ t('box.upper')}</p>
-        <p className="box__content box__content--large" id="fingerprint">{fingerprint}</p>
+        <p className="box__content box__content--large" id="fingerprint">{user.fingerprint}</p>
         <p className="box__content">
           <Trans i18nKey="box.lower">
             <br/>
@@ -46,17 +46,17 @@ const User = ({ fingerprint, userInfo }) => {
           <strong></strong>
         </Trans>
     </p>
-      <UserInfo userInfo={userInfo}/>
+      <UserInfo deviceInfo={user.deviceInfo}/>
     </div>
   )
 }
 
 User.propTypes = {
-  fingerprint: PropTypes.number.isRequired,
-  userInfo: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired
 }
 
 UserInfo.propTypes = {
-  userInfo: PropTypes.object.isRequired
+  deviceInfo: PropTypes.object.isRequired
 }
+
 export default User

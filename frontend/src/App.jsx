@@ -3,7 +3,7 @@ import Header from './components/Header/Header'
 import User from '@components/User/User'
 import Link from '@components/Link/Link'
 import Footer from '@components/Footer/Footer'
-import userConfig from './utils/userConfig'
+import deviceConfig from './utils/deviceConfig'
 import '@styles/reset.scss'
 import '@styles/blocks/app.scss'
 import '@styles/blocks/main.scss'
@@ -12,21 +12,27 @@ import { useTranslation } from 'react-i18next'
 import requests from '@utils/apiDataFetcher'
 
 function App () {
-  const { fingerprint, userInfo } = userConfig
+  const { fingerprint, deviceInfo } = deviceConfig
   const { t } = useTranslation()
-  const [user, setuser] = useState({})
+  const [user, setuser] = useState({
+    fingerprint,
+    deviceInfo,
+    userInfo: null
+  })
 
   useEffect(() => {
     (async () => {
       try {
         await requests.getOne(fingerprint)
         const { payload } = await requests.updateOne(fingerprint)
-        setuser(payload)
+        const newUser = { ...user, userInfo: payload }
+        setuser(newUser)
       } catch (error) {
         if (error.response.status === 404) {
           try {
-            const { payload } = await requests.insertOne(fingerprint, userInfo.browser.value, userInfo.os.value)
-            setuser(payload)
+            const { payload } = await requests.insertOne(fingerprint, deviceInfo.browser.value, deviceInfo.os.value)
+            const newUser = { ...user, userInfo: payload }
+            setuser(newUser)
           } catch (postError) {
             console.log(postError.message)
           }
@@ -36,7 +42,6 @@ function App () {
       }
     })()
   }, [])
-  console.log(user)
 
   return (
     <div className="app">
@@ -51,7 +56,7 @@ function App () {
           href="https://arxiv.org/pdf/1905.01051"
           modifier="link--color-red"
         />
-        <User fingerprint={fingerprint} userInfo={userInfo} />
+        <User user={user} />
       </main>
       <Footer />
     </div>

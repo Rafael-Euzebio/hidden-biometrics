@@ -3,7 +3,7 @@ import { ClientJS } from 'clientjs'
 const client = new ClientJS()
 
 const fingerprint = client.getFingerprint()
-const userInfo = {
+const deviceInfo = {
   userAgent: {
     text: 'User Agent',
     value: client.getUserAgent()
@@ -41,4 +41,4 @@ const userInfo = {
     value: client.getFonts()
   }
 }
-export default { fingerprint, userInfo }
+export default { fingerprint, deviceInfo }

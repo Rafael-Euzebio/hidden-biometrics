@@ -7,7 +7,7 @@ import { testPropTypes } from '@test-helpers/test-helpers'
 describe('<User />', () => {
   const validProps = {
     fingerprint: 3969806569,
-    userInfo: {
+    deviceInfo: {
       userAgent: {
         text: 'User Agent',
         value: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
@@ -16,18 +16,18 @@ describe('<User />', () => {
   }
   const invalidProps = {
     fingerprint: '3969806569',
-    userInfo: 1
+    deviceInfo: 1
   }
 
   describe('valid props', () => {
     beforeEach(() => {
-      render(<User fingerprint={validProps.fingerprint} userInfo={validProps.userInfo} />)
+      render(<User fingerprint={validProps.fingerprint} deviceInfo={validProps.deviceInfo} />)
     })
 
     test('should render mock user info', () => {
-      const text = screen.getByText(validProps.userInfo.userAgent.text)
+      const text = screen.getByText(validProps.deviceInfo.userAgent.text)
       expect(text).toBeVisible()
-      const value = screen.getByText(validProps.userInfo.userAgent.value)
+      const value = screen.getByText(validProps.deviceInfo.userAgent.value)
       expect(value).toBeInTheDocument()
     })
 
@@ -40,7 +40,7 @@ describe('<User />', () => {
   describe('invalid props', () => {
     const undefinedUserAgent = {
       fingerprint: 3969806569,
-      userInfo: {
+      deviceInfo: {
         userAgent: {
           text: 'User Agent',
           value: undefined
@@ -48,7 +48,7 @@ describe('<User />', () => {
       }
     }
     test('should return empty div if user info has an undefined value', async () => {
-      render(<User fingerprint={undefinedUserAgent.fingerprint} userInfo={undefinedUserAgent.userInfo} />)
+      render(<User fingerprint={undefinedUserAgent.fingerprint} deviceInfo={undefinedUserAgent.deviceInfo} />)
       const emptyDiv = screen.getByTestId('empty-div')
       expect(emptyDiv).toBeVisible()
       expect(emptyDiv).not.toHaveTextContent()
