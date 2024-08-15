@@ -39,6 +39,11 @@ describe('<User />', () => {
       const element = screen.getByText(validProps.user.fingerprint, { exact: false })
       expect(element).toBeVisible()
     })
+
+    test('should display access count', () => {
+      const text = screen.getByText(`You have viewed this page ${validProps.user.accessCount} times`)
+      expect(text).toBeVisible()
+    })
   })
 
   describe('invalid props', () => {
