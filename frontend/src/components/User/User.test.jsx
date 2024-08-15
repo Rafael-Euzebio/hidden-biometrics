@@ -8,32 +8,30 @@ describe('<User />', () => {
   const validProps = {
     user: {
       fingerprint: 3969806569,
-      deviceInfo: {
-        userAgent: {
-          text: 'User Agent',
-          value: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
-        }
-      },
-      userInfo: {
-        fingerprint: 3969806569,
-        browser: 'Firefox',
-        os: 'Windows'
+      accessCount: 2
+    },
+    deviceInfo: {
+      userAgent: {
+        text: 'User Agent',
+        value: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
       }
     }
   }
+
   const invalidProps = {
-    user: 1
+    user: 1,
+    deviceInfo: 1
   }
 
   describe('valid props', () => {
     beforeEach(() => {
-      render(<User user={validProps.user}/>)
+      render(<User user={validProps.user} deviceInfo={validProps.deviceInfo}/>)
     })
 
     test('should render mock user info', () => {
-      const text = screen.getByText(validProps.user.deviceInfo.userAgent.text)
+      const text = screen.getByText(validProps.deviceInfo.userAgent.text)
       expect(text).toBeVisible()
-      const value = screen.getByText(validProps.user.deviceInfo.userAgent.value)
+      const value = screen.getByText(validProps.deviceInfo.userAgent.value)
       expect(value).toBeInTheDocument()
     })
 
@@ -45,21 +43,19 @@ describe('<User />', () => {
 
   describe('invalid props', () => {
     const undefinedUserAgent = {
-      fingerprint: 3969806569,
+      user: {
+        fingerprint: 3969806569,
+        accessCount: 1
+      },
       deviceInfo: {
         userAgent: {
           text: 'User Agent',
           value: undefined
         }
-      },
-      userInfo: {
-        fingerprint: 3969806569,
-        browser: 'Firefox',
-        os: 'Windows'
       }
     }
     test('should return empty div if user info has an undefined value', async () => {
-      render(<User user={undefinedUserAgent}/>)
+      render(<User user={undefinedUserAgent} deviceInfo={undefinedUserAgent.deviceInfo}/>)
       const emptyDiv = screen.getByTestId('empty-div')
       expect(emptyDiv).toBeVisible()
       expect(emptyDiv).not.toHaveTextContent()
