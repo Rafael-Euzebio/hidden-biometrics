@@ -16,8 +16,6 @@ function App () {
   const { t } = useTranslation()
   const [user, setuser] = useState({
     fingerprint,
-    deviceInfo,
-    userInfo: null
     accessCount: 1
   })
 
@@ -26,14 +24,12 @@ function App () {
       try {
         await requests.getOne(fingerprint)
         const { payload } = await requests.updateOne(fingerprint)
-        const newUser = { ...user, userInfo: payload }
-        setuser(newUser)
+        setuser(payload)
       } catch (error) {
         if (error.response.status === 404) {
           try {
             const { payload } = await requests.insertOne(fingerprint, deviceInfo.browser.value, deviceInfo.os.value)
-            const newUser = { ...user, userInfo: payload }
-            setuser(newUser)
+            setuser(payload)
           } catch (postError) {
             console.log(postError.message)
           }
@@ -57,7 +53,7 @@ function App () {
           href="https://arxiv.org/pdf/1905.01051"
           modifier="link--color-red"
         />
-        <User user={user} />
+        <User user={user} deviceInfo={deviceInfo} />
       </main>
       <Footer />
     </div>

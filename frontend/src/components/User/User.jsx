@@ -6,7 +6,7 @@ import '@styles/blocks/user.scss'
 import '@styles/blocks/box.scss'
 import { Trans, useTranslation } from 'react-i18next'
 
-const UserInfo = ({ deviceInfo }) => {
+const DeviceInfo = ({ deviceInfo }) => {
   const collapsibles = Object.keys(deviceInfo).map(key => {
     if (deviceInfo[key].value !== undefined) {
       return (
@@ -27,7 +27,7 @@ const UserInfo = ({ deviceInfo }) => {
     </div>
   )
 }
-const User = ({ user }) => {
+
 const AccessCount = ({ accessCount, t }) => {
   return (
     <p className="box__content">
@@ -36,13 +36,17 @@ const AccessCount = ({ accessCount, t }) => {
   )
 }
 
+const User = ({ user, deviceInfo }) => {
   const { t } = useTranslation()
 
   return (
     <div className="user">
       <div className="box">
         <p className="box__content">{ t('box.upper')}</p>
-        <p className="box__content box__content--large" id="fingerprint">{user.fingerprint}</p>
+        <p className="box__content box__content--large"
+            id="fingerprint">
+            {user.fingerprint}
+          </p>
         <p className="box__content">
           <Trans i18nKey="box.lower.vpn">
             <br/>
@@ -56,16 +60,17 @@ const AccessCount = ({ accessCount, t }) => {
           <strong></strong>
         </Trans>
     </p>
-      <UserInfo deviceInfo={user.deviceInfo}/>
+      <DeviceInfo deviceInfo={deviceInfo}/>
     </div>
   )
 }
 
 User.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  deviceInfo: PropTypes.object.isRequired
 }
 
-UserInfo.propTypes = {
+DeviceInfo.propTypes = {
   deviceInfo: PropTypes.object.isRequired
 }
 
