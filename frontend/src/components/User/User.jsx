@@ -28,6 +28,14 @@ const UserInfo = ({ deviceInfo }) => {
   )
 }
 const User = ({ user }) => {
+const AccessCount = ({ accessCount, t }) => {
+  return (
+    <p className="box__content">
+      { t('box.lower.accessCount', { number: accessCount })}
+    </p>
+  )
+}
+
   const { t } = useTranslation()
 
   return (
@@ -36,11 +44,13 @@ const User = ({ user }) => {
         <p className="box__content">{ t('box.upper')}</p>
         <p className="box__content box__content--large" id="fingerprint">{user.fingerprint}</p>
         <p className="box__content">
-          <Trans i18nKey="box.lower">
+          <Trans i18nKey="box.lower.vpn">
             <br/>
           </Trans>
         </p>
+        <AccessCount accessCount={user.accessCount} t={t}/>
       </div>
+
       <p className="main__description">
         <Trans i18nKey="main.collapsibles.description">
           <strong></strong>
@@ -57,6 +67,11 @@ User.propTypes = {
 
 UserInfo.propTypes = {
   deviceInfo: PropTypes.object.isRequired
+}
+
+AccessCount.propTypes = {
+  accessCount: PropTypes.number.isRequired,
+  t: PropTypes.func.isRequired
 }
 
 export default User

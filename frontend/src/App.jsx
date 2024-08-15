@@ -18,6 +18,7 @@ function App () {
     fingerprint,
     deviceInfo,
     userInfo: null
+    accessCount: 1
   })
 
   useEffect(() => {
