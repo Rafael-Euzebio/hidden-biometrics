@@ -20,7 +20,8 @@
     "upper": "Your Fingerprint:",
     "lower": {
       "vpn": "Try switching to an anonymous tab or activating a VPN. <0/> It won't change.",
-      "accessCount": "You have viewed this page {{number}} times"
+      "accessCount_one": "<0>You have viewed this page once.<0/>",
+      "accessCount_other": "<0>You have viewed this page {{count}} times.<0/>"
     }
   }
 }

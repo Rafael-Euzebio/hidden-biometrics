@@ -20,7 +20,8 @@
     "upper": "Sua Impressão Digital:",
     "lower": {
       "vpn": "Tente trocar para uma aba anônima ou ativar uma VPN. <0/> Ela não ira mudar.",
-      "accessCount": "Você visualizou essa página {{number}} vezes."
+      "accessCount_one": "<0> Você visualizou essa página 1 vez.</0>",
+      "accessCount_other": "<0> Você visualizou essa página {{count}} vezes.</0>"
     } 
   }
 }

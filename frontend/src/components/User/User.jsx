@@ -31,7 +31,7 @@ const DeviceInfo = ({ deviceInfo }) => {
 const AccessCount = ({ accessCount, t }) => {
   return (
     <p className="box__content">
-      { t('box.lower.accessCount', { number: accessCount })}
+      <Trans i18nKey="box.lower.accessCount" count={accessCount}><strong></strong></Trans>
     </p>
   )
 }
