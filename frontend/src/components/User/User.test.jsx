@@ -39,9 +39,30 @@ describe('<User />', () => {
       const element = screen.getByText(validProps.user.fingerprint, { exact: false })
       expect(element).toBeVisible()
     })
+  })
 
-    test('should display access count', () => {
-      const text = screen.getByText(`You have viewed this page ${validProps.user.accessCount} times`)
+  describe('Access Count', () => {
+    test('should display correct text for singular access count', () => {
+      const singularAccessCount = {
+        user: {
+          fingerprint: 3969806569,
+          accessCount: 1
+        },
+        deviceInfo: {
+          userAgent: {
+            text: 'User Agent',
+            value: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+          }
+        }
+      }
+      render(<User user={singularAccessCount.user} deviceInfo={singularAccessCount.deviceInfo}/>)
+      const text = screen.getByText('You have viewed this page once.')
+      expect(text).toBeVisible()
+    })
+
+    test('should display correct text for plural access count', () => {
+      render(<User user={validProps.user} deviceInfo={validProps.deviceInfo}/>)
+      const text = screen.getByText(`You have viewed this page ${validProps.user.accessCount} times.`)
       expect(text).toBeVisible()
     })
   })
