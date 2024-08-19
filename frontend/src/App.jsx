@@ -15,8 +15,7 @@ function App () {
   const { fingerprint, deviceInfo } = deviceConfig
   const { t } = useTranslation()
   const [user, setuser] = useState({
-    fingerprint,
-    accessCount: 1
+    fingerprint
   })
 
   useEffect(() => {

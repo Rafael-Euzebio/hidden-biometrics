@@ -52,7 +52,9 @@ const User = ({ user, deviceInfo }) => {
             <br/>
           </Trans>
         </p>
-        <AccessCount accessCount={user.accessCount} t={t}/>
+        {user.accessCount
+          ? <AccessCount accessCount={user.accessCount} t={t}/>
+          : <></>}
       </div>
 
       <p className="main__description">
