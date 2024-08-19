@@ -21,9 +21,11 @@ const translationTests = (language) => {
 
   test(`should display box content in ${language}`, async ({ page }) => {
     const boxUpper = page.getByText(translation.boxUpper, { exact: true })
-    const boxLower = page.getByText(translation.boxLower)
+    const boxLowerVPN = page.getByText(translation.boxLowerVPN)
+    const boxLowerAccessCount = page.getByText(translation.boxLowerAccessCount)
     await expect(boxUpper).toBeVisible()
-    await expect(boxLower).toBeVisible()
+    await expect(boxLowerVPN).toBeVisible()
+    await expect(boxLowerAccessCount).toBeVisible()
   })
 }
 
