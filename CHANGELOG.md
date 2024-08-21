@@ -43,7 +43,7 @@
 ## Português :brazil:
 
 ### 2024-07-08
-- Bugfix: fixed footer links not leading to their respective websites.
+- Correção de bugs: Corrige links que não direcionavam a seus respectivos websites.
 
 ### 2024-07-08
 - Correção de bug: conteúdo colapsável não sendo exibido inteiramente em disposítivos mobiles.
