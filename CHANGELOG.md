@@ -4,6 +4,9 @@
 
 ## English :us:
 
+### 2024-08-21
+- Implemented user's access count
+
 ### 2024-07-08
 - Bugfix: fixed footer links not leading to their respective websites.
 
@@ -41,6 +44,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-08-21
+- Adiciona contagem de acesso atrelada ao usuário
 
 ### 2024-07-08
 - Correção de bugs: Corrige links que não direcionavam a seus respectivos websites.
