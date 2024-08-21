@@ -19,7 +19,7 @@ As a personal project it also serves the purpose to apply my knowledge about web
 ### Roadmap English
 - [ ] Browser Fingerprint and user information.
     - [x] Display it to the user.
-    - [ ] Store it in a Mongo Database.
+    - [x] Store it in a Mongo Database.
     - [ ] Allow deletion
 - [ ] Add sections explaining the uses for Browser Fingerprint.
 - [ ] Display statistics.
@@ -38,7 +38,7 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
 ### Roadmap Português
 - [ ] Impressão Digital de Browser e informações sobre o usuário.
     - [x] Exibir para o usuário.
-    - [ ] Armazená-la em um banco de dados MongoDB.
+    - [x] Armazená-la em um banco de dados MongoDB.
     - [ ] Permitir deleção.
 - [ ] Adicionar sessões sobre os diferentes usos de Impressão Digital de Browser.
 - [ ] Exibir estatísticas.
