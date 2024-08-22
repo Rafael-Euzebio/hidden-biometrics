@@ -11,6 +11,7 @@ const { standardResponse } = require('@middlewares/standardResponse')
 app.use(express.static('dist'))
 app.use(express.json())
 app.use(standardResponse)
+app.set('trust proxy', true)
 
 connectDB()
 
@@ -36,7 +37,7 @@ app.get('/api/users/:fingerprint', async (req, res) => {
 
 app.post('/api/users', async (req, res) => {
   const { fingerprint, os, browser } = req.body
-  const ip = req.socket.remoteAddress
+  const ip = req.ip
 
   if (!fingerprint || !os || !browser) {
     return res.standardResponse(400, 'Error', null, 'Missing required fields')
