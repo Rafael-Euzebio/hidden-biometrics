@@ -5,6 +5,9 @@
 ## English :us:
 
 ### 2024-08-21
+- Minor bug fixes
+
+### 2024-08-21
 - Implemented user's access count
 
 ### 2024-07-08
@@ -44,6 +47,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-08-21
+- Correção de bugs
 
 ### 2024-08-21
 - Adiciona contagem de acesso atrelada ao usuário
