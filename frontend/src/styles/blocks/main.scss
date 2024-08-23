@@ -6,6 +6,7 @@
   margin: 20px auto;
   line-height: 1.8;
   padding-top: 60px;
+  min-height: 100vh;
 
   &__heading {
     font-size: 1.6rem;
@@ -17,6 +18,11 @@
   &__description {
     color: $monokai-text;
     font-size: 1.1rem;
+  }
+
+  &--centered {
+    margin: 0 auto;
+    @include flex-center(space-evenly);
   }
 }
 
