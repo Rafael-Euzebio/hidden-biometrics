@@ -1,12 +1,12 @@
 import { describe, test, expect, beforeEach } from 'vitest'
 import { screen } from '@testing-library/react'
-import App from './App'
+import Home from './Home'
 import { renderWithTranslation } from '@test-helpers/test-helpers'
-import i18n from './i18n.js'
+import i18n from '@src/i18n.js'
 
-describe('<App />', () => {
+describe('<Home />', () => {
   beforeEach(() => {
-    renderWithTranslation(App)
+    renderWithTranslation(Home)
   })
 
   test('should display main description from english resource', () => {
