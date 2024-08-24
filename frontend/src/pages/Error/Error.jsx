@@ -2,7 +2,7 @@ import React from 'react'
 import '@styles/blocks/box.scss'
 import { useRouteError } from 'react-router-dom'
 
-const ErrorPage = () => {
+const Error = () => {
   const error = useRouteError()
   console.log(error)
   return (
@@ -16,4 +16,4 @@ const ErrorPage = () => {
   )
 }
 
-export default ErrorPage
+export default Error

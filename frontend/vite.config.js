@@ -40,6 +40,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@src': `${path.resolve(__dirname, './src/')}`,
       '@styles': `${path.resolve(__dirname, './src/styles')}`,
       '@components': `${path.resolve(__dirname, './src/components')}`,
       '@test-helpers': `${path.resolve(__dirname, './src/test-helpers')}`,
