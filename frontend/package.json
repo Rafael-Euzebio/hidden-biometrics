@@ -37,6 +37,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "@vitest/browser": "^1.6.0",
     "@vitest/coverage-istanbul": "^1.6.0",
+    "axios-mock-adapter": "^2.0.0",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
