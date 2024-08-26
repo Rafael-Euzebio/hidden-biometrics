@@ -48,5 +48,16 @@ describe('<Home />', () => {
       expect(mock.history.patch.length).toBeGreaterThan(0)
     })
 
+    test('should call POST after a failed GET', async () => {
+      mock.onGet(/\/api\/users\/\d+/).reply(404, {
+        response: {
+          status: 404
+        }
+      })
+      mock.onPost(/\/api\/users\/\d+/).reply(201)
+      render(<Home />)
+      await new Promise((resolve) => setTimeout(resolve, 0))
+      expect(mock.history.post.length).toBeGreaterThan(0)
+    })
   })
 })
