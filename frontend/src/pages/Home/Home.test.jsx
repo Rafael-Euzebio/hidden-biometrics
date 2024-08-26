@@ -4,6 +4,8 @@ import { screen, render } from '@testing-library/react'
 import Home from './Home'
 import { renderWithTranslation } from '@test-helpers/test-helpers'
 import i18n from '@src/i18n.js'
+import axios from 'axios'
+import MockAdapter from 'axios-mock-adapter'
 
 describe('<Home />', () => {
   describe('Rendering', () => {
@@ -29,6 +31,22 @@ describe('<Home />', () => {
     })
   })
 
+  describe('Requests', () => {
+    const mock = new MockAdapter(axios)
+
+    afterEach(() => {
+      mock.reset()
+    })
+
+    test('should call PATCH after a successful GET', async () => {
+      mock.onGet(/\/api\/users\/\d+/).reply(200)
+      mock.onPost(/\/api\/users\/\d+/).reply(200)
+      render(<Home />)
+      await new Promise((resolve) => setTimeout(resolve, 0))
+
+      expect(mock.history.get.length).toBeGreaterThan(0)
+      expect(mock.history.patch.length).toBeGreaterThan(0)
+    })
 
   })
 })
