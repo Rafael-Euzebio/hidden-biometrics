@@ -23,5 +23,11 @@
       "accessCount_one": "<0>You have viewed this page once.<0/>",
       "accessCount_other": "<0>You have viewed this page {{count}} times.<0/>"
     }
-  }
+  },
+  "errorBox": {
+    "upper": "Oops! An error happened!",
+    "lower": {
+      "Not Found": "Not Found"
+    }
+  } 
 }
