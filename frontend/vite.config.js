@@ -34,6 +34,8 @@ export default defineConfig({
     onConsoleLog (log, type) {
       if (type === 'stdout' && !log.includes('vitest debug')) {
         return false
+      } else if (log.includes('No routes matched location')) {
+        return false
       }
     }
 
