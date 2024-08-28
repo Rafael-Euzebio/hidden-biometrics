@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { url, desktopBrowsers, mobileBrowsers } from './constants'
+import { url, desktopBrowsers, mobileBrowsers } from '../constants'
 
 test.beforeEach(async ({ page }) => {
   await page.goto(url)
