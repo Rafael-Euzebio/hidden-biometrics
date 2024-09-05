@@ -4,13 +4,13 @@
   color: $monokai-text;
   
   &--color-red {
-    @include itemFocus($monokai-interaction-red);
     @include underline($monokai-interaction-red);
+    @include itemFocus($monokai-interaction-red);
   }
 
   &--color-purple{
-    @include itemFocus($monokai-accent-purple);
     @include underline($monokai-accent-purple);
+    @include itemFocus($monokai-accent-purple);
   }
 
   &--icon {
