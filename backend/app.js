@@ -81,6 +81,11 @@ app.delete('/api/users/:fingerprint', async (req, res) => {
   return res.standardResponse(200, 'Success', result)
 })
 
+app.get('/*', (req, res) => {
+  res.sendFile(__dirname + '/dist/index.html');
+})
+
+
 const server = app.listen(port, () => {
   console.log(`Running on port ${port}`)
 })
