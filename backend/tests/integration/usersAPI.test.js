@@ -5,7 +5,7 @@ const request = supertest(app)
 const { connectDB, disconnectDB } = require('@config/db.js')
 const { it, describe, beforeEach, afterEach } = require('node:test')
 const assert = require('node:assert/strict')
-const { initializeDB, initialUser, validUser, invalidUser } = require('@tests/test_helpers/database.helpers.js')
+const { initializeDB, initialUsers, validUser, invalidUser } = require('@tests/test_helpers/database.helpers.js')
 const User = require('@models/user')
 
 
@@ -140,18 +140,18 @@ describe('Users route', () => {
       describe('Routes', () => {
         it('should return 200 and user with access count increased by one when user exists in the payloadbase', async () => {
           await initializeDB()
-          const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
+          const res = await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
           const { payload } = res.body
           assert.equal(res.status, 200)
-          assert.equal(payload.accessCount, initialUser.accessCount + 1)
+          assert.equal(payload.accessCount, initialUsers[0].accessCount + 1)
         })
       })
 
       describe('Database', () => {
         it('should find user in payloadbase with increased access count', async () => {
           await initializeDB()
-          await request.patch(`/api/users/${initialUser.fingerprint}`)
-          const userInDB = await User.findOne({ fingerprint: initialUser.fingerprint })
+          await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
+          const userInDB = await User.findOne({ fingerprint: initialUsers[0].fingerprint })
           assert.equal(userInDB.accessCount, 2)
         })
       })
@@ -160,15 +160,15 @@ describe('Users route', () => {
     describe('Client Error', () => {
       describe('Route', () => {
         it('should return 404 when user is not in payloadbase', async () => {
-          const res = await request.patch(`/api/users/${initialUser.fingerprint}`)
+          const res = await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
           assert.equal(res.status, 404)
         })
       })
 
       describe('Database', () => {
         it('should not insert in the payloadbase when user is not present', async () => {
-          await request.patch(`/api/users/${initialUser.fingerprint}`)
-          const userInDB = await User.findOne({ fingerprint: initialUser.fingerprint })
+          await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
+          const userInDB = await User.findOne({ fingerprint: initialUsers[0].fingerprint })
           assert.equal(userInDB, null)
         })
       })
@@ -180,20 +180,20 @@ describe('Users route', () => {
       let res
       beforeEach(async () => {
         initializeDB()
-        res = await request.delete(`/api/users/${initialUser.fingerprint}`)
+        res = await request.delete(`/api/users/${initialUsers[0].fingerprint}`)
       })
 
       describe('Route', () => {
         it('should send 200 and user payload when user is in the database', async () => {
           const { payload } = res.body
           assert.equal(res.status, 200)
-          assert.equal(payload.fingerprint, initialUser.fingerprint)
+          assert.equal(payload.fingerprint, initialUsers[0].fingerprint)
         })
       })
 
       describe('Database', () => {
         it('should not find user in payloadbase after deletion request', async () => {
-          const userInDB = await User.findOne({ fingerprint: initialUser.fingerprint })      
+          const userInDB = await User.findOne({ fingerprint: initialUsers[0].fingerprint })      
           assert.equal(userInDB, null)
         })
       })
@@ -201,7 +201,7 @@ describe('Users route', () => {
 
     describe('Client Error', () => {
       it('should send 404 when user is not in the payloadbase', async () => {
-        const res = await request.delete(`/api/users/${initialUser.fingerprint}`)
+        const res = await request.delete(`/api/users/${initialUsers[0].fingerprint}`)
         assert.equal(res.status, 404)
       }) 
     })
