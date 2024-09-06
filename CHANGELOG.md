@@ -5,13 +5,16 @@
 ## English :us:
 
 ### 2024-09-05
+- Minor bug fixes.
+
+### 2024-09-05
 - Added standard error page for unexistent URLs.
 
 ### 2024-08-21
-- Minor bug fixes
+- Minor bug fixes.
 
 ### 2024-08-21
-- Implemented user's access count
+- Implemented user's access count.
 
 ### 2024-07-08
 - Bugfix: fixed footer links not leading to their respective websites.
@@ -52,10 +55,13 @@
 ## Português :brazil:
 
 ### 2024-09-05
+- Correção de bugs.
+
+### 2024-09-05
 - Adiciona página padrão para URLs não existentes.
 
 ### 2024-08-21
-- Correção de bugs
+- Correção de bugs.
 
 ### 2024-08-21
 - Adiciona contagem de acesso atrelada ao usuário
