@@ -9,7 +9,7 @@ i18n
   .use(LanguageDetector)
   .init({
     detection: {
-      order: ['querystring', 'navigator']
+      order: ['querystring', 'localStorage', 'navigator']
     },
     debug: true,
     fallbackLng: 'en',
