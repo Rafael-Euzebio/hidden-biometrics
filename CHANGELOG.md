@@ -4,6 +4,9 @@
 
 ## English :us:
 
+### 2024-09-05
+- Added standard error page for unexistent URLs.
+
 ### 2024-08-21
 - Minor bug fixes
 
@@ -47,6 +50,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-09-05
+- Adiciona página padrão para URLs não existentes.
 
 ### 2024-08-21
 - Correção de bugs
