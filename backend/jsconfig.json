@@ -5,7 +5,8 @@
       "@models/*": ["models/*"],
       "@config/*": ["config/*"],
       "@tests/*": ["tests/*"],
-      "@middlewares/*": ["middlewares/*"]
+      "@middlewares/*": ["middlewares/*"],
+      "@utils/*": ["utils/*"]
     }
   }
 }

@@ -39,6 +39,7 @@
     "@config": "./config",
     "@models": "./models",
     "@tests": "./tests",
-    "@middlewares": "./middlewares"
+    "@middlewares": "./middlewares",
+    "@utils": "./utils"
   }
 }
