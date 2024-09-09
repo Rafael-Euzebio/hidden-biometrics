@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 const { connectDB } = require('@config/db')
 const usersRoute = require('./routes/users')
+const statisticsRoute = require('./routes/statistics')
 const { standardResponse } = require('@middlewares/standardResponse')
 const port = process.env.PORT
 
@@ -15,6 +16,7 @@ app.set('trust proxy', true)
 connectDB()
 
 app.use('/api/users', usersRoute)
+app.use('/api/statistics', statisticsRoute)
 
 app.get('/*', (req, res) => {
   res.sendFile(__dirname + '/dist/index.html');
