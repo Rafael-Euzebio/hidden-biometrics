@@ -24,6 +24,11 @@ const requests = {
       return response.data
     }
   },
+  statistics: {
+    getAll: async function () {
+      const response = await axios.get(`${baseUrl}/statistics`)
+      return response.data
+    }
   }
 }
 
