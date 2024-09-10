@@ -18,13 +18,13 @@ function Home () {
   useEffect(() => {
     (async () => {
       try {
-        await requests.getOne(fingerprint)
-        const { payload } = await requests.updateOne(fingerprint)
+        await requests.users.getOne(fingerprint)
+        const { payload } = await requests.users.updateOne(fingerprint)
         setuser(payload)
       } catch (error) {
         if (error.response.status === 404) {
           try {
-            const { payload } = await requests.insertOne(fingerprint, deviceInfo.browser.value, deviceInfo.os.value)
+            const { payload } = await requests.users.insertOne(fingerprint, deviceInfo.browser.value, deviceInfo.os.value)
             setuser(payload)
           } catch (postError) {
             console.log(postError.message)
