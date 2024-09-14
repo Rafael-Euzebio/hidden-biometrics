@@ -33,6 +33,9 @@
   "statistics": {
     "browsers": "Browsers",
     "os": "Operational Systems",
-    "users": "users:"
+    "label": "users",
+    "sr-only": {
+      "title": "Statistics:"
+    }
   }
 }

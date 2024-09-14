@@ -13,12 +13,21 @@ const Chart = ({Type, title, data, t}) => {
 
   return (
     <>
+      <div  tabIndex="0" className="charts-wrapper__chart--sr-only">
+        {t('statistics.sr-only.title') + title},
+        {Object.keys(data).map((item) => {
+          return (
+            `${item}: ${t('statistics.label')}: ${data[item]},`
+          )
+        })}
+      </div>
+
       <div className="charts-wrapper__box">
         <Type className="charts-wrapper__chart" 
           data={{
             labels: Object.keys(data),
             datasets: [{
-              label: t('statistics.users'),
+              label: t('statistics.label'),
               data: Object.values(data),
               borderWidth: 1,
               backgroundColor: colors

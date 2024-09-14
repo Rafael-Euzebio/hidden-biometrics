@@ -33,6 +33,10 @@
   "statistics": {
     "browsers": "Navegadores",
     "os": "Sistemas Operacionais",
-    "users": "Usuários:"
+    "title": "Estatísticas:",
+    "label": "Usuários",
+    "sr-only": {
+      "title": "Estatísticas:"
+    }
   }
 }
