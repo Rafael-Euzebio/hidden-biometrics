@@ -29,5 +29,10 @@
     "lower": {
       "Not Found": "Página não encontrada"
     }
+  },
+  "statistics": {
+    "browsers": "Navegadores",
+    "os": "Sistemas Operacionais",
+    "users": "Usuários:"
   }
 }

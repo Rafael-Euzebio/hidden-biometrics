@@ -1,0 +1,21 @@
+@use '@styles/globals.scss' as *;
+
+.charts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 80vh;
+
+  &__box {
+    width: 100%;
+    border: 1px solid $monokai-accent-yellow;
+    border-radius: 10px;
+    flex: 1;
+    margin: 15px;
+
+  }
+
+  &__chart {
+    margin: 15px;
+  }
+}
