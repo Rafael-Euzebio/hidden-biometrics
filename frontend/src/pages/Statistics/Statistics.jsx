@@ -13,14 +13,14 @@ const Chart = ({Type, title, data, t}) => {
 
   return (
     <>
-      <div  tabIndex="0" className="charts-wrapper__chart--sr-only">
-        {t('statistics.sr-only.title') + title},
+      <h2 tabIndex="0" className="charts-wrapper__chart--sr-only">{t('statistics.sr-only.title') + title}</h2>
+      <ul className="charts-wrapper__chart--sr-only">
         {Object.keys(data).map((item) => {
           return (
-            `${item}: ${t('statistics.label')}: ${data[item]},`
+            <li key={item} tabIndex="0">{item}: {t('statistics.label')}: {data[item]}</li>
           )
         })}
-      </div>
+      </ul>
 
       <div className="charts-wrapper__box">
         <Type className="charts-wrapper__chart" 
