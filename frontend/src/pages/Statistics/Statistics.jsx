@@ -24,6 +24,7 @@ const Chart = ({Type, title, data, t}) => {
 
       <div className="charts-wrapper__box">
         <Type className="charts-wrapper__chart" 
+          data-testid={`chart-${title}`}
           data={{
             labels: Object.keys(data),
             datasets: [{
