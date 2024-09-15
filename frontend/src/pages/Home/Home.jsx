@@ -24,7 +24,8 @@ function Home () {
       } catch (error) {
         if (error.response.status === 404) {
           try {
-            const { payload } = await requests.users.insertOne(fingerprint, deviceInfo.browser.value, deviceInfo.os.value)
+            const { browser, os } = deviceInfo
+            const { payload } = await requests.users.insertOne(fingerprint, browser.value, os.value)
             setuser(payload)
           } catch (postError) {
             console.log(postError.message)
