@@ -33,6 +33,14 @@ describe('<Statistics />', () => {
       renderWithTranslation(Statistics)
     })
 
+    test('should render data for screen readers', async () => {
+      for (const browser in payload.browsers) {
+        screen.debug()
+        const data = await screen.findByText(`${browser}: users: ${payload.browsers[browser]}`)
+        expect(data).toBeInTheDocument()
+      }
+    })
+
     test('should display charts', async () => {
       const browsersChart = await screen.findByTestId('chart-Browsers')
       const osChart = await screen.findByTestId('chart-Operational Systems')
