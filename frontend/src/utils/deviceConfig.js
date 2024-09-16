@@ -24,6 +24,10 @@ const deviceInfo = {
     text: 'OS Version',
     value: client.getOSVersion()
   },
+  deviceType: {
+    text: 'Device Type',
+    value: client.isMobile() === true ? "Mobile" : "Desktop" 
+  },
   cpu: {
     text: 'CPU',
     value: client.getCPU()
