@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import 'chart.js/auto'
-import { Doughnut } from 'react-chartjs-2'
+import { Doughnut, Bar } from 'react-chartjs-2'
 import { useTranslation } from 'react-i18next'
 import requests from '@utils/apiDataFetcher'
 import '@styles/blocks/main.scss'
 import '@styles/blocks/charts.scss'
 import '@styles/blocks/box.scss'
 
-const Chart = ({Type, title, data, t}) => {
-  const colors = ['#F92672', '#A6E22E', '#66D9EF', '#FD971F', '#E6DB74', '#AE81FF', '#FF6F61', '#DC143C']
+const chartColors = ['#F92672', '#A6E22E', '#66D9EF', '#FD971F', '#E6DB74', '#AE81FF', '#FF6F61', '#DC143C']
+const chartWhite = '#F8F8F2'
 
+const Chart = ({Type, title, data, additionalOptions, t}) => {
   return (
     <>
       <h2 tabIndex="0" className="charts-wrapper__chart--sr-only">{t('statistics.sr-only.title') + title}</h2>
@@ -31,18 +32,19 @@ const Chart = ({Type, title, data, t}) => {
               label: t('statistics.label'),
               data: Object.values(data),
               borderWidth: 1,
-              backgroundColor: colors
+              backgroundColor: chartColors
             }],
           }} 
           options={{
+            ...additionalOptions,
             responsive: true,
             maintainAspectRatio: false,
-            color: '#F8F8F2',
+            color: chartWhite,
             plugins: {
               title: {
                 display: true,
                 text: title,
-                color: '#F8F8F2',
+                color: chartWhite,
                 font: {
                   size: 18,
                 },
@@ -69,6 +71,26 @@ const Chart = ({Type, title, data, t}) => {
 const Statistics = () => {
   const [statistics, setstatistics] = useState(null)
   const { t } = useTranslation()
+  const barOptions = {
+    scales: {
+      x: {
+        ticks: {
+          color: chartWhite
+        },
+        grid: {
+          color: chartWhite
+        }
+      },
+      y: {
+        ticks: {
+          color: chartWhite
+        },
+        grid: {
+          color: chartWhite
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     (async () => {
@@ -81,6 +103,7 @@ const Statistics = () => {
     })()
   }, [])
 
+
   return (
     <main className="main">
       { statistics !== null ?
@@ -88,6 +111,7 @@ const Statistics = () => {
         <div className="charts-wrapper">
           <Chart Type={Doughnut} title={t('statistics.browsers')} data={statistics.browsers} t={t} />
           <Chart Type={Doughnut} title={t('statistics.os')} data={statistics.os} t={t} />
+          <Chart Type={Bar} title={t('statistics.deviceType')} data={statistics.deviceType} additionalOptions={barOptions} t={t} />
         </div>
         ) :
         <div></div>

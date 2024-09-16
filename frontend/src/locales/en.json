@@ -34,6 +34,7 @@
   "statistics": {
     "browsers": "Browsers",
     "os": "Operational Systems",
+    "deviceType": "Device Type",
     "label": "users",
     "sr-only": {
       "title": "Statistics:"
