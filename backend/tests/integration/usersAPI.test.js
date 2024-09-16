@@ -35,7 +35,7 @@ describe('Users route', () => {
           assert.equal(user.fingerprint, validUser.fingerprint)
           assert.equal(res.status, 200)
         })
-        it('should return user and 200 when user is in payloadbase', async () => {
+        it('should return user and 200 when user is in database', async () => {
           const res = await request.get(`/api/users/${validUser.fingerprint}`)
           const { payload } = res.body
 
@@ -46,7 +46,7 @@ describe('Users route', () => {
     })
 
     describe('Client Error', () => {
-      it('should return 404 when user is not in the payloadbase', async () => {
+      it('should return 404 when user is not in the database', async () => {
         const res = await request.get(`/api/users/${validUser.fingerprint}`)
         const { error } = res.body
         assert.equal(res.status, 404)
@@ -83,7 +83,7 @@ describe('Users route', () => {
       })
 
       describe('Database', () => {
-        it('should find user in payloadbase after request with correct fields and values', async () => {
+        it('should find user in database after request with correct fields and values', async () => {
           const userInDB = await User.findOne({ fingerprint: validUser.fingerprint })
           assert.ok(userInDB)
 
@@ -108,7 +108,7 @@ describe('Users route', () => {
           assert.ok(error)
         })
 
-        it('should return 409 and an error when fingerprint already exists in the payloadbase', async () => {
+        it('should return 409 and an error when fingerprint already exists in the database', async () => {
           await initializeDB()
           const res = await request.post(`/api/users`).send(validUser)
           const { error } = res.body
@@ -118,14 +118,14 @@ describe('Users route', () => {
       })
 
       describe('Database', () => {
-        it('should not add user to the payloadbase when required fields are not present', async () => {
+        it('should not add user to the database when required fields are not present', async () => {
           await request.post(`/api/users`).send(invalidUser)
           const userInDB = await User.findOne({ fingerprint: invalidUser.fingerprint })
 
           assert.equal(userInDB, null)
         })
 
-        it('should not add user to the payloadbase when user is already present', async () => {
+        it('should not add user to the database when user is already present', async () => {
           await initializeDB()
           await request.post(`/api/users`).send(validUser)
           const usersInDB = await User.find({ fingerprint: validUser.fingerprint })
@@ -138,7 +138,7 @@ describe('Users route', () => {
   describe('PATCH', () => {
     describe('Success', () => {
       describe('Routes', () => {
-        it('should return 200 and user with access count increased by one when user exists in the payloadbase', async () => {
+        it('should return 200 and user with access count increased by one when user exists in the database', async () => {
           await initializeDB()
           const res = await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
           const { payload } = res.body
@@ -148,7 +148,7 @@ describe('Users route', () => {
       })
 
       describe('Database', () => {
-        it('should find user in payloadbase with increased access count', async () => {
+        it('should find user in database with increased access count', async () => {
           await initializeDB()
           await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
           const userInDB = await User.findOne({ fingerprint: initialUsers[0].fingerprint })
@@ -159,14 +159,14 @@ describe('Users route', () => {
 
     describe('Client Error', () => {
       describe('Route', () => {
-        it('should return 404 when user is not in payloadbase', async () => {
+        it('should return 404 when user is not in database', async () => {
           const res = await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
           assert.equal(res.status, 404)
         })
       })
 
       describe('Database', () => {
-        it('should not insert in the payloadbase when user is not present', async () => {
+        it('should not insert in the database when user is not present', async () => {
           await request.patch(`/api/users/${initialUsers[0].fingerprint}`)
           const userInDB = await User.findOne({ fingerprint: initialUsers[0].fingerprint })
           assert.equal(userInDB, null)
@@ -192,7 +192,7 @@ describe('Users route', () => {
       })
 
       describe('Database', () => {
-        it('should not find user in payloadbase after deletion request', async () => {
+        it('should not find user in database after deletion request', async () => {
           const userInDB = await User.findOne({ fingerprint: initialUsers[0].fingerprint })      
           assert.equal(userInDB, null)
         })
@@ -200,7 +200,7 @@ describe('Users route', () => {
     })
 
     describe('Client Error', () => {
-      it('should send 404 when user is not in the payloadbase', async () => {
+      it('should send 404 when user is not in the database', async () => {
         const res = await request.delete(`/api/users/${initialUsers[0].fingerprint}`)
         assert.equal(res.status, 404)
       }) 
