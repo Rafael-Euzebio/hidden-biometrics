@@ -108,6 +108,14 @@ describe('Users route', () => {
           assert.ok(error)
         })
 
+        it('should return 400 and an error when device type is not "Desktop" or "Mobile"', async () => {
+          const userWithWrongDeviceType = {...validUser, deviceType: 'Smart TV'}
+          const res = await request.post(`/api/users`).send(userWithWrongDeviceType)
+          const { error } = res.body
+          assert.equal(res.status, 400)
+          assert.ok(error)
+        })
+
         it('should return 409 and an error when fingerprint already exists in the database', async () => {
           await initializeDB()
           const res = await request.post(`/api/users`).send(validUser)
@@ -130,6 +138,14 @@ describe('Users route', () => {
           await request.post(`/api/users`).send(validUser)
           const usersInDB = await User.find({ fingerprint: validUser.fingerprint })
           assert.equal(usersInDB.length, 1)
+        })
+
+        it('should not add user to the database when Device Type is not "Mobile" or "Desktop"', async () => {
+
+          const userWithWrongDeviceType = {...validUser, deviceType: 'Smart TV'}
+          await request.post(`/api/users`).send(userWithWrongDeviceType)
+          const usersInDB = await User.find({ fingerprint: userWithWrongDeviceType.fingerprint })
+          assert.equal(usersInDB.length, 0)
         })
       })
     })
