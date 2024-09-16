@@ -23,11 +23,13 @@ usersRoute.get('/:fingerprint', async (req, res) => {
 })
 
 usersRoute.post('/', async (req, res) => {
-  const { fingerprint, os, browser } = req.body
+  const { fingerprint, os, browser, deviceType } = req.body
   const ip = req.ip
 
-  if (!fingerprint || !os || !browser) {
+  if (!fingerprint || !os || !browser || !deviceType) {
     return res.standardResponse(400, 'Error', null, 'Missing required fields')
+  } else if (deviceType !== 'Desktop' && deviceType !== 'Mobile') {
+    return res.standardResponse(400, 'Error', null, 'Device Type should be "Desktop" or "Mobile"')
   }
   const user = new User({ ...req.body, ip })
 

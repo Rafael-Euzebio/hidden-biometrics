@@ -8,7 +8,7 @@ import '@styles/blocks/header.scss'
 import { useTranslation } from 'react-i18next'
 import requests from '@utils/apiDataFetcher'
 
-function Home () {
+function Home() {
   const { fingerprint, deviceInfo } = deviceConfig
   const { t } = useTranslation()
   const [user, setuser] = useState({
@@ -24,8 +24,14 @@ function Home () {
       } catch (error) {
         if (error.response.status === 404) {
           try {
-            const { browser, os } = deviceInfo
-            const { payload } = await requests.users.insertOne(fingerprint, browser.value, os.value)
+            const { browser, os, deviceType } = deviceInfo
+            const { payload } = await requests.users.insertOne(
+              fingerprint,
+              browser.value,
+              os.value,
+              deviceType.value
+            )
+
             setuser(payload)
           } catch (postError) {
             console.log(postError.message)
@@ -39,9 +45,9 @@ function Home () {
 
   return (
     <main className="main">
-      <h2 className="main__heading"> { t('main.heading-2') }</h2>
+      <h2 className="main__heading"> {t('main.heading-2')}</h2>
       <p className="main__description">
-        { t('main.description') }
+        {t('main.description')}
       </p>
       <Link
         text={t('research')}

@@ -11,8 +11,8 @@ const requests = {
       const response = await axios.get(`${baseUrl}/users/${fingerprint}`)
       return response.data
     },
-    insertOne: async function (fingerprint, browser, os) {
-      const response = await axios.post(`${baseUrl}/users`, { fingerprint, browser, os })
+    insertOne: async function (fingerprint, browser, os, deviceType) {
+      const response = await axios.post(`${baseUrl}/users`, { fingerprint, browser, os, deviceType })
       return response.data
     },
     updateOne: async function (fingerprint) {

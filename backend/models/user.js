@@ -22,6 +22,10 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  deviceType: {
+    type: String,
+    required: true
+  },
   ip: {
     type: String
   },
