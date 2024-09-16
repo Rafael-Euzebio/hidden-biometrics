@@ -32,17 +32,14 @@ const links = {
   techstack: [
     {
       text: 'Vite',
-      label: 'Vite',
       href: 'https://vitejs.dev/'
     },
     {
       text: 'React',
-      label: 'React',
       href: 'https://react.dev/'
     },
     {
       text: 'ClientJS',
-      label: 'ClientJS',
       href: 'http://clientjs.org/'
     }
   ]
