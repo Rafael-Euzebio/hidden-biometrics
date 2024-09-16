@@ -6,16 +6,19 @@ import PropTypes from 'prop-types'
 import LanguageSwitcher from '@components/LanguageSwitcher/LanguageSwitcher'
 import links from '@utils/links'
 import '@styles/blocks/navbar.scss'
+import { useTranslation } from 'react-i18next'
 
 const Navbar = ({ modifier }) => {
   const { contact } = links
+  const { t } = useTranslation()
 
   const navbarLinks = contact.map((link) => (
     <NavbarItem
       key={link.href}
       component={
         <Link
-          icon={link.icon}
+          text={link?.icon ? '' : t(`navbar.${link.text}`)}
+          icon={link?.icon}
           label={link.label}
           href={link.href}
           modifier='link--icon link--color-red'

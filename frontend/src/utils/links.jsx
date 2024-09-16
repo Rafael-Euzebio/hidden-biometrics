@@ -2,6 +2,12 @@ import React from 'react'
 import { Email, GitHub, LinkedIn } from '@mui/icons-material'
 
 const links = {
+  pages: [
+    {
+      text: 'statistics',
+      href: '/statistics'
+    }
+  ],
   contact: [
     {
       icon: <GitHub />,
