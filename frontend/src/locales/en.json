@@ -16,6 +16,9 @@
       "Installed Fonts": "Installed Fonts"
     }
   },
+  "navbar": {
+    "statistics": "Statistics"
+  },
   "research": "Browser Fingerprinting: A survey.",
   "box": {
     "upper": "Your Fingerprint:",

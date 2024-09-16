@@ -16,6 +16,9 @@
       "Installed Fonts": "Fontes Instaladas"
     }
   },
+  "navbar": {
+    "statistics": "Estatísticas"
+  },
   "research": "Impressão Digital de Navegador: Uma Pesquisa. (em inglês)",
   "box": {
     "upper": "Sua Impressão Digital:",

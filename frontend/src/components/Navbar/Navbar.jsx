@@ -9,10 +9,10 @@ import '@styles/blocks/navbar.scss'
 import { useTranslation } from 'react-i18next'
 
 const Navbar = ({ modifier }) => {
-  const { contact } = links
+  const { pages, contact } = links
   const { t } = useTranslation()
 
-  const navbarLinks = contact.map((link) => (
+  const navbarLinks = [...pages, ...contact].map((link) => (
     <NavbarItem
       key={link.href}
       component={
@@ -21,7 +21,7 @@ const Navbar = ({ modifier }) => {
           icon={link?.icon}
           label={link.label}
           href={link.href}
-          modifier='link--icon link--color-red'
+          modifier='link--icon link--color-red link--no-decoration'
         />
       }
     />
