@@ -25,6 +25,10 @@ describe('<Statistics />', () => {
       os: {
         Linux: 4,
         Windows: 3
+      },
+      deviceType: {
+        Mobile: 5,
+        Desktop: 2,
       }
     }
 
@@ -33,17 +37,36 @@ describe('<Statistics />', () => {
       renderWithTranslation(Statistics)
     })
 
-    test('should render data for screen readers', async () => {
-      for (const browser in payload.browsers) {
-        screen.debug()
-        const data = await screen.findByText(`${browser}: users: ${payload.browsers[browser]}`)
-        expect(data).toBeInTheDocument()
-      }
+    describe('Screen readers', () => {
+      test("should render browser's statistics", async () => {
+        for (const browser in payload.browsers) {
+          screen.debug()
+          const data = await screen.findByText(`${browser}: users: ${payload.browsers[browser]}`)
+          expect(data).toBeInTheDocument()
+        }
+      })
+
+      test("should render os statistics", async () => {
+        for (const name in payload.os) {
+          screen.debug()
+          const data = await screen.findByText(`${name}: users: ${payload.os[name]}`)
+          expect(data).toBeInTheDocument()
+        }
+      })
+      
+      test("should render device type statistics", async () => {
+        for (const device in payload.deviceType) {
+          screen.debug()
+          const data = await screen.findByText(`${device}: users: ${payload.deviceType[device]}`)
+          expect(data).toBeInTheDocument()
+        }
+      })
     })
 
     test('should display charts', async () => {
       const browsersChart = await screen.findByTestId('chart-Browsers')
       const osChart = await screen.findByTestId('chart-Operational Systems')
+      const deviceCharts = await screen.findByTestId('chart-Device Type')
       expect(osChart).toBeVisible()
       expect(browsersChart).toBeVisible()
     })
