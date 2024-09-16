@@ -45,7 +45,14 @@ describe('Statistics route', () => {
      assert.equal(os.Linux, 2)
      assert.equal(os.Mac, 2)
      assert.equal(os.IOS, 1)
-     assert.equal(res.status, 200)
+   })
+
+   it("should return correct device type count", async () => {
+     const res = await request.get('/api/statistics')
+     const { deviceType } = res.body.payload
+
+     assert.equal(deviceType["Desktop"], 6)
+     assert.equal(deviceType["Mobile"], 1)
    })
  })
 })
