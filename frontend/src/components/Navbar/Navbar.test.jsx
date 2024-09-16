@@ -19,6 +19,11 @@ describe('<Navbar />', () => {
     }
   })
 
+  test('should display statistics page link', () => {
+    const link = screen.getByText('Statistics')
+    expect(link).toBeVisible()
+  })
+
   test('shoud display language switcher', () => {
     const languageSwitcher = screen.getByLabelText('language selector')
     expect(languageSwitcher).toBeVisible()
