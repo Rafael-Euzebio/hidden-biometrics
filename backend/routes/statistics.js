@@ -12,7 +12,8 @@ statisticsRoute.get('/', async (req, res) => {
   }
   const browsers = countByFilter(users, 'browser') 
   const os = countByFilter(users, 'os') 
-  const statistics = { browsers, os }
+  const deviceType = countByFilter(users, 'deviceType') 
+  const statistics = { browsers, os, deviceType }
 
   return res.standardResponse(200, 'Success', statistics)
 })
