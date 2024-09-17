@@ -80,3 +80,11 @@ $small-mobile-width: 370px;
     }
   }
 }
+
+@mixin charts {
+  @media (max-width: $large-mobile-width) {
+    .charts-wrapper {
+        min-height: 120vh;
+    }
+  }
+}

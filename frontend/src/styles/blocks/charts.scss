@@ -1,4 +1,5 @@
 @use '@styles/globals.scss' as *;
+@use '@styles/mobile-styles.scss' as mobile-styles;
 
 .charts-wrapper {
   display: flex;
@@ -28,3 +29,5 @@
     }
   }
 }
+
+@include mobile-styles.charts
