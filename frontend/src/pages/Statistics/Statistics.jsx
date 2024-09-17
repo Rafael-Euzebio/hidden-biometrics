@@ -46,7 +46,7 @@ const Chart = ({Type, title, data, additionalOptions, t}) => {
                 text: title,
                 color: chartWhite,
                 font: {
-                  size: 18,
+                  size: 16,
                 },
                 padding: {
                   top: 0,
@@ -56,7 +56,7 @@ const Chart = ({Type, title, data, additionalOptions, t}) => {
               legend: {
                 labels: {
                   font: {
-                    size: 16
+                    size: 14
                   }
                 }
               }
