@@ -4,6 +4,9 @@
 
 ## English :us:
 
+### 2024-09-17
+- Added page with statistics about users.
+
 ### 2024-09-05
 - Minor bug fixes.
 
@@ -53,6 +56,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+
+### 2024-09-17
+- Adiciona página com estatísticas sobre os usuários.
 
 ### 2024-09-05
 - Correção de bugs.
