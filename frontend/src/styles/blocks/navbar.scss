@@ -2,7 +2,7 @@
 @use '../mobile-styles.scss' as mobile-styles;
 
 .navbar {
-  width: 50%;
+  width: 60%;
   margin-right: 0.2rem;
   align-self: stretch;
   @include flex-center(space-evenly);
