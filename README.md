@@ -52,6 +52,7 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
 - [React](https://react.dev/).
 - [SCSS](https://sass-lang.com/documentation/syntax/).
 - [ClientJS](https://clientjs.org/).
+- [ChartJS](https://www.chartjs.org/)
 
 ### Backend
 - [Node.js](https://nodejs.org/en).
