@@ -22,7 +22,7 @@ As a personal project it also serves the purpose to apply my knowledge about web
     - [x] Store it in a Mongo Database.
     - [ ] Allow deletion
 - [ ] Add sections explaining the uses for Browser Fingerprint.
-- [ ] Display statistics.
+- [x] Display statistics.
 - [x] Improve responsiveness
 - [x] Add multi-language suport
 
@@ -41,7 +41,7 @@ Como projeto pessoal também possui o objetivo de aplicar meu conhecimento de de
     - [x] Armazená-la em um banco de dados MongoDB.
     - [ ] Permitir deleção.
 - [ ] Adicionar sessões sobre os diferentes usos de Impressão Digital de Browser.
-- [ ] Exibir estatísticas.
+- [x] Exibir estatísticas.
 - [x] Melhore a responsividade.
 - [x] Adicionar suporte para múltiplos idiomas
 
