@@ -6,26 +6,26 @@ $small-mobile-width: 370px;
 @mixin navbar {
   @media (max-width: $large-mobile-width) {
     .navbar {
-        width: 100%;
-        overflow: hidden;
-        max-height: 0px;
-        visibility: hidden;
-        @include transition(max-height visibility);
+      width: 100%;
+      overflow: hidden;
+      max-height: 0px;
+      visibility: hidden;
+      @include transition(max-height visibility);
 
-        &--open{
-          visibility: visible;
-          display: block;
-          max-height: 500px;
+      &--open{
+        visibility: visible;
+        display: block;
+        max-height: 500px;
+      }
+
+      &__item {
+        height: 3.5rem;
+        border-bottom: 1px solid $monokai-selection;
+
+        &:hover {
+          border: none;
         }
-
-        &__item {
-          height: 3.5rem;
-          border-bottom: 1px solid $monokai-selection;
-
-          &:hover {
-            border: none;
-          }
-        }
+      }
     }
   }
 }
