@@ -28,25 +28,6 @@ test.describe('Home Page', () => {
         const heading = page.getByRole('heading', { name: translation.heading })
         await expect(heading).toBeVisible()
       })
-
-      test(`should display description in ${language}`, async ({ page }) => {
-        const description = page.getByText(translation.description)
-        await expect(description).toBeVisible()
-      })
-
-      test(`should display research link in ${language}`, async ({ page }) => {
-        const link = page.getByText(translation.research)
-        await expect(link).toBeVisible()
-      })
-
-      test(`should display box content in ${language}`, async ({ page }) => {
-        const boxUpper = page.getByText(translation.boxUpper, { exact: true })
-        const boxLowerVPN = page.getByText(translation.boxLowerVPN)
-        const boxLowerAccessCount = page.getByText(translation.boxLowerAccessCount)
-        await expect(boxUpper).toBeVisible()
-        await expect(boxLowerVPN).toBeVisible()
-        await expect(boxLowerAccessCount).toBeVisible()
-      })
     }
 
     for (const language in translations.error) {

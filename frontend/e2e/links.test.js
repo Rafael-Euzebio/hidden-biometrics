@@ -39,7 +39,7 @@ test.describe('links', () => {
       for (const link of links.pages) {
         test(`should find an access ${link.text} link`, async ({ page }) => {
           const foundLink = page.getByText(link.text)
-          expect(foundLink).toBeVisible()
+          await expect(foundLink).toBeVisible()
           await foundLink.click() 
           expect(page.url()).toBe(url + link.href)
         })
