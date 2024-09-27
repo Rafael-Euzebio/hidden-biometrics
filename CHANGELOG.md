@@ -3,6 +3,9 @@
 - [Português :brazil:](#português)
 
 ## English :us:
+### 2024-09-27
+- Change charts layout on large screens 
+- Add percent tooltips to charts
 
 ### 2024-09-17
 - Added page with statistics about users.
@@ -56,6 +59,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+### 2024-09-27
+- Muda o layout dos gráficos em telas grandes.
+- Adiciona tooltips em formato percentual.
 
 ### 2024-09-17
 - Adiciona página com estatísticas sobre os usuários.
