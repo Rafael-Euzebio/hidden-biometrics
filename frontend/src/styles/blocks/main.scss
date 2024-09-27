@@ -2,7 +2,7 @@
 @use '../mobile-styles.scss' as mobile-styles;
 
 .main {
-  width: 60%;
+  width: 50%;
   margin: 20px auto;
   line-height: 1.8;
   padding-top: 60px;
@@ -23,6 +23,10 @@
   &--centered {
     margin: 0 auto;
     @include flex-center(space-evenly);
+  }
+
+  &--large {
+    width: 90%;
   }
 }
 

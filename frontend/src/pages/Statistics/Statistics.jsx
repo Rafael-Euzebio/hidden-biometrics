@@ -105,7 +105,7 @@ const Statistics = () => {
 
 
   return (
-    <main className="main">
+    <main className="main main--large">
       { statistics !== null ?
         (
         <div className="charts-wrapper">
