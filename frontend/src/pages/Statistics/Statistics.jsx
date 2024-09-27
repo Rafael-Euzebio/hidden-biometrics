@@ -32,7 +32,22 @@ const Chart = ({Type, title, data, additionalOptions, t}) => {
               label: t('statistics.label'),
               data: Object.values(data),
               borderWidth: 1,
-              backgroundColor: chartColors
+              backgroundColor: chartColors,
+              tooltip: {
+                callbacks: {
+                  label: function percentTooltip(context) {
+                    let value = context.formattedValue;
+                    let sum = 0;
+                    let dataArr = context.chart.data.datasets[0].data;
+                    dataArr.map(data => {
+                        sum += Number(data);
+                    });
+
+                    let percentage = (value * 100 / sum) + '%';
+                    return percentage;
+                  }
+                }
+              }
             }],
           }} 
           options={{
