@@ -27,6 +27,14 @@ const translations = {
     pt: {
       errorMessage: 'Oops! Ocorreu um erro!'
     }
+  },
+  statistics: {
+    en: {
+      label: 'users'
+    },
+    pt: {
+      label: 'usuários'
+    }
   }
 }
 
