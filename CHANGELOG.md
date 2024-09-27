@@ -3,6 +3,9 @@
 - [Português :brazil:](#português)
 
 ## English :us:
+### 2024-09-27-Hotfix
+- Bugfix: removes decimal points in charts tooltips
+
 ### 2024-09-27
 - Change charts layout on large screens 
 - Add percent tooltips to charts
@@ -59,6 +62,9 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+### 2024-09-27-Hotfix
+- Correção de bug: remove pontos decimais das tooltips dos gráficos.
+
 ### 2024-09-27
 - Muda o layout dos gráficos em telas grandes.
 - Adiciona tooltips em formato percentual.
