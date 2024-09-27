@@ -43,7 +43,7 @@ const Chart = ({Type, title, data, additionalOptions, t}) => {
                         sum += Number(data);
                     });
 
-                    let percentage = (value * 100 / sum) + '%';
+                    let percentage = (value * 100 / sum).toFixed() + '%';
                     return percentage;
                   }
                 }
