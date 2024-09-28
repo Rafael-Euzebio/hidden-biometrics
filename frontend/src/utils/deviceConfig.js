@@ -10,7 +10,22 @@ const deviceInfo = {
   },
   browser: {
     text: 'Browser',
-    value: client.getBrowser()
+    value: (function (getBrowser) {
+
+      function getBrave () {
+        if (window.navigator.brave != undefined) {
+          if (window.navigator.brave.isBrave.name == "isBrave") {
+            return true;
+          } else {
+            return false;
+          }
+        } else {
+          return false;
+        }
+      }
+      
+      return getBrave() ? 'Brave': client.getBrowser()
+    })()
   },
   browserVersion: {
     text: 'Browser Version',
