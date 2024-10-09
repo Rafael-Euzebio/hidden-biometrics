@@ -1,10 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import List from '@components/List/List'
 import Collapsible from '@components/Collapsible/Collapsible'
 import '@styles/blocks/user.scss'
 import '@styles/blocks/box.scss'
 import { Trans, useTranslation } from 'react-i18next'
+
+const FingerprintScramble = ({ fingerprint }) => {
+  const characters = '0123456789' 
+  const [text, settext] = useState('0000000000')
+
+  useEffect(() => {
+    let requestId = null 
+    const start = Date.now()
+    let frameStart = start
+    let fps = 8
+
+    const scrambleText = () => {
+      let scrambledText = ''
+      for (let i = 0; i < text.length; i++){
+          scrambledText += characters.charAt(Math.floor(Math.random() * characters.length))
+      }
+      settext(scrambledText)
+
+      const finish = Date.now()
+      const elapsed = finish - start
+      if (elapsed >= 2500) {
+        cancelAnimationFrame(requestId)
+        settext(fingerprint)
+        return
+      } else {
+        requestId = requestAnimationFrame(animate)
+      }
+    }
+
+    const animate = () => {
+      const now = Date.now()  
+      const elapsedSinceLastFrame = now - frameStart
+
+      if (elapsedSinceLastFrame > 1000 / fps) {
+        frameStart = Date.now()
+        requestId = requestAnimationFrame(scrambleText)
+      } else {
+        requestId = requestAnimationFrame(animate)
+      }
+    }
+
+    requestId = requestAnimationFrame(animate)
+
+    return () => {
+      cancelAnimationFrame(requestId);
+    };
+  }, [])
+
+
+  return (
+    <p className="box__content box__content--large">{text}</p>
+  )
+
+}
 
 const DeviceInfo = ({ deviceInfo }) => {
   const collapsibles = Object.keys(deviceInfo).map(key => {
@@ -43,10 +97,7 @@ const User = ({ user, deviceInfo }) => {
     <div className="user">
       <div className="box">
         <p className="box__content">{ t('box.upper')}</p>
-        <p className="box__content box__content--large"
-            id="fingerprint">
-            {user.fingerprint}
-          </p>
+        <FingerprintScramble fingerprint={user.fingerprint} />
         <p className="box__content">
           <Trans i18nKey="box.lower.vpn">
             <br/>
