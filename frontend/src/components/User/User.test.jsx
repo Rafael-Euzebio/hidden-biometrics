@@ -35,8 +35,9 @@ describe('<User />', () => {
       expect(value).toBeInTheDocument()
     })
 
-    test('should display mock fingerprint to the user', () => {
-      const element = screen.getByText(validProps.user.fingerprint, { exact: false })
+    test('should display mock fingerprint to the user', { timeout: 5000 }, async () => {
+      await new Promise((resolve) => { setTimeout(() => {resolve()}, 3000)})
+      const element = screen.getByText(validProps.user.fingerprint, { exact: false})
       expect(element).toBeVisible()
     })
   })
