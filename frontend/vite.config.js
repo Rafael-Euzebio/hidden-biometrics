@@ -32,9 +32,13 @@ export default defineConfig({
       exclude: [...coverageConfigDefaults.exclude, '**/main.jsx/**', '**/e2e/**', '**/playwright.config.js/**']
     },
     onConsoleLog (log, type) {
-      if (type === 'stdout' && !log.includes('vitest debug')) {
+      if (log.includes('i18n')) {
         return false
       } else if (log.includes('No routes matched location')) {
+        return false
+      } else if (log.includes('Request failed with')){
+        return false
+      } else if (log.includes('ErrorResponse')){
         return false
       }
     }
