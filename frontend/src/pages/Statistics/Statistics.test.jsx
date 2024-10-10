@@ -40,7 +40,6 @@ describe('<Statistics />', () => {
     describe('Screen readers', () => {
       test("should render browser's statistics", async () => {
         for (const browser in payload.browsers) {
-          screen.debug()
           const data = await screen.findByText(`${browser}: users: ${payload.browsers[browser]}`)
           expect(data).toBeInTheDocument()
         }
@@ -48,7 +47,6 @@ describe('<Statistics />', () => {
 
       test("should render os statistics", async () => {
         for (const name in payload.os) {
-          screen.debug()
           const data = await screen.findByText(`${name}: users: ${payload.os[name]}`)
           expect(data).toBeInTheDocument()
         }
@@ -56,7 +54,6 @@ describe('<Statistics />', () => {
       
       test("should render device type statistics", async () => {
         for (const device in payload.deviceType) {
-          screen.debug()
           const data = await screen.findByText(`${device}: users: ${payload.deviceType[device]}`)
           expect(data).toBeInTheDocument()
         }
