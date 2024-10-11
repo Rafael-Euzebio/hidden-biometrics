@@ -1,10 +1,15 @@
 import React from 'react'
-import { beforeEach, describe, expect, test } from 'vitest'
+import { beforeEach, describe, expect, test, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import User from './User'
 import { testPropTypes } from '@test-helpers/test-helpers'
+import { mockIntersectionObserver } from '@src/test-helpers/test-helpers'
 
 describe('<User />', () => {
+  let mockObserver;
+  beforeEach(() => {
+    mockObserver = mockIntersectionObserver()
+  })
   const validProps = {
     user: {
       fingerprint: 3969806569,
@@ -30,9 +35,10 @@ describe('<User />', () => {
 
     test('should render mock user info', () => {
       const text = screen.getByText(validProps.deviceInfo.userAgent.text)
-      expect(text).toBeVisible()
       const value = screen.getByText(validProps.deviceInfo.userAgent.value)
+      expect(text).toBeInTheDocument()
       expect(value).toBeInTheDocument()
+      expect(mockObserver).toHaveBeenCalled()
     })
 
     test('should display mock fingerprint to the user', { timeout: 5000 }, async () => {
@@ -84,8 +90,9 @@ describe('<User />', () => {
     test('should return empty div if user info has an undefined value', async () => {
       render(<User user={undefinedUserAgent} deviceInfo={undefinedUserAgent.deviceInfo}/>)
       const emptyDiv = screen.getByTestId('empty-div')
-      expect(emptyDiv).toBeVisible()
+      expect(emptyDiv).toBeInTheDocument()
       expect(emptyDiv).not.toHaveTextContent()
+      expect(mockObserver).toHaveBeenCalled()
     })
   })
 

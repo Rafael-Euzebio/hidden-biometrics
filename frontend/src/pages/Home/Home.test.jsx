@@ -1,13 +1,19 @@
 import React from 'react'
-import { describe, test, expect, beforeEach, afterEach } from 'vitest'
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest'
 import { screen, render } from '@testing-library/react'
 import Home from './Home'
 import { renderWithTranslation } from '@test-helpers/test-helpers'
 import i18n from '@src/i18n.js'
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
+import { mockIntersectionObserver } from '@src/test-helpers/test-helpers'
 
 describe('<Home />', () => {
+  let mockObserver
+  beforeEach(() => {
+    mockObserver = mockIntersectionObserver()
+  })
+
   describe('Rendering', () => {
     beforeEach(() => {
       renderWithTranslation(Home)
