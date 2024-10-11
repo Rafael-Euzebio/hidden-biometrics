@@ -26,4 +26,15 @@ const renderWithTranslation = (Component, props) => {
   )
 }
 
-export { testPropTypes, renderWithTranslation }
+const mockIntersectionObserver = () => {
+  const mockObserver = vi.fn()
+  mockObserver.mockReturnValue({
+    observe: () => null,
+    unobserve: () => null,
+    disconnect: () => null
+  })
+  window.IntersectionObserver = mockObserver;
+  return mockObserver
+}
+
+export { testPropTypes, renderWithTranslation, mockIntersectionObserver }
