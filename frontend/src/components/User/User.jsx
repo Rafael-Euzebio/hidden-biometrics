@@ -56,7 +56,7 @@ const FingerprintScramble = ({ fingerprint }) => {
 
 
   return (
-    <p className="box__content box__content--large">{text}</p>
+    <p id="fingerprint" className="box__content box__content--large">{text}</p>
   )
 
 }
