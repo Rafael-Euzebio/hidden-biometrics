@@ -32,7 +32,7 @@ const links = {
   techstack: [
     {
       text: 'Vite',
-      href: 'https://vitejs.dev/'
+      href: 'https://vite.dev/'
     },
     {
       text: 'React',
