@@ -13,9 +13,12 @@ test.describe('Home Page', () => {
   })
 
   test('should find browser information matching current browser', async ({ page, browserName, isMobile }) => {
-    const browsers = isMobile ? mobileBrowsers : desktopBrowsers
+    // disable animation
+    page.addStyleTag({ content: '.fade-in { opacity: 1; visibility: visible }'})
 
-    await page.getByRole('button', { name: 'Browser', exact: true }).click()
+    const browsers = isMobile ? mobileBrowsers : desktopBrowsers
+    let collapsible = page.getByRole('button', { name: 'Browser', exact: true })
+    await collapsible.click()
     const currentBrowser = page.getByText(browsers[browserName], { exact: true })
     await expect(currentBrowser).toBeVisible()
   })
