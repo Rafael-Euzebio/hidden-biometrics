@@ -3,6 +3,10 @@
 - [Português :brazil:](#português)
 
 ## English :us:
+### 2024-10-12
+- Bugfix: fixes Brave Browser being recognized as "Chrome"
+- Adds animation effects to Fingerprint and Device Info collapsibles
+
 ### 2024-09-27-Hotfix
 - Bugfix: removes decimal points in charts tooltips
 
@@ -62,6 +66,10 @@
 - Implemented browser fingerprinting.
 
 ## Português :brazil:
+### 2024-10-12
+- Correção de bug: Corrige navegador Brave sendo identificado como 'Chrome'.
+- Adiciona animações na Impressão Digital e nos colapsáveis de informação do dispositivo.
+
 ### 2024-09-27-Hotfix
 - Correção de bug: remove pontos decimais das tooltips dos gráficos.
 
